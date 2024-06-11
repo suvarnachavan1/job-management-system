@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from hirelanes.netlify.app/job-details by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:31:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+<link rel="stylesheet" href="assets/css/nice-select.min.css">
+<link rel="stylesheet" href="assets/css/boxicons.min.css">
+<link rel="stylesheet" href="assets/fonts/flaticon.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+<link rel="stylesheet" href="assets/css/odometer.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/theme-dark.css">
+<title>HireLanes Jobs</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body onload="details()">
+
+<div class="loader">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <h1 style="text-align: center; color: white; font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;">HIRELANES</h1>
+            <div class="spinner"></div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-area fixed-top">
+<div class="mobile-nav">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+</div>
+
+<div class="main-nav three">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-light">
+<a class='navbar-brand' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class='nav-link' href='index.html'>HOME</a>
+        </li>
+        <li class="nav-item">
+            <span class="tooltip-span">New</span>
+            <a class='nav-link active' href='jobs.html'>JOBS</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle">DASHBOARD<i class='bx bx-chevron-down'></i></a>
+            <ul class="dropdown-menu">
+            <li class="nav-item" id="appliedJobs"></li>
+            <li class="nav-item">
+                <a class='nav-link' href='pricing.html'>PRICING PLANS</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='faq.html'>FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='privacy-policy.html'>PRIVACY POLICY</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='terms-conditions.html'>TERMS AND CONDITIONS</a>
+            </li>
+            <li class="nav-item" id="logout"></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+        <a class='nav-link' href='contact.html'>CONTACT</a>
+        </li>
+        <li class="nav-item">
+        <a class='nav-link' href='about.html'>ABOUT</a>
+        </li>
+    </ul>
+<div class="side-nav three" id="sidebar"></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+
+<div class="page-title-area two">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="container">
+<div class="row align-items-end">
+<div class="col-lg-8">
+<div class="left">
+<!--<img src="assets/img/job-details1.png" alt="Details">-->
+<h2 id="job_title"></h2>
+<ul>
+<li id="job_category">
+<i class='bx bx-pie-chart-alt-2'></i>
+</li>
+<li id="posting_date">
+<i class='bx bx-time'></i>
+Posted date: 10 months ago
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="right">
+<div id="apply_now">
+   <a class="cmn-btn" onclick="apply_now()">
+    Apply Now
+    <i class='bx bx-plus'></i>
+    </a> 
+</div>
+
+<ul>
+<li>
+<a href="#">
+<i class='bx bx-heart'></i>
+Save
+</a>
+</li>
+<li>
+<a onclick="copyLink()">
+<i class='bx bx-share-alt'></i>
+Copy Share Link
+</a>
+</li>
+<li>
+<a href="#">
+<i class='bx bxs-report'></i>
+Report
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="job-details-area ptb-100">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<div class="details-item">
+<div class="details-inner">
+<h3>Job Description</h3>
+<p id="job_description"></p>
+</div>
+<div class="details-inner">
+<h3>Our Company</h3>
+<p id="our_company"></p>
+</div>
+
+<div class="details-inner">
+<h3>Job Responsibilities</h3>
+<ul  id="responsibilities"></ul>
+</div>
+<div class="details-inner">
+<h3>Our Mission</h3>
+<p id="our_mission"></p>
+</div>
+<div class="details-inner">
+<h3>Our Vision</h3><p id="our_vision"></p>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="widget-area">
+<div class="information widget-item">
+<h3>Job Information</h3>
+<ul>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Salary</h4>
+<span id="salary"></span>
+</li>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Location</h4>
+<span id="location"></span>
+</li>
+<li>
+ <img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Posted</h4>
+<span id="posting_time"></span>
+</li>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Experience</h4>
+<span id="experience"></span>
+</li>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Industry</h4>
+<span id="industry_type"></span>
+</li>
+<li>
+    <img src="assets/img/job-details-icon.png" alt="Details">
+    <h4>Phone</h4>
+    <p id="phone"></p>
+</li>
+<li>
+    <img src="assets/img/job-details-icon.png" alt="Details">
+    <h4>Email</h4>
+    <p id="email"></p>
+</li>
+</ul>
+</div>
+<div class="job widget-item">
+    <h3>Find A Job</h3>
+    <form>
+    <label>
+    <i class="flaticon-send"></i>
+    </label>
+    <input type="text" class="form-control" placeholder="Email address">
+    <button type="submit" class="btn">Get Job Alert</button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+<div class="job-details-related pt-100 pb-70">
+<div class="container">
+<div class="section-title">
+<h2>Related Jobs</h2>
+</div>
+<div class="employer-item">
+<a href="job-details.html">
+<img src="assets/img/home-one/job1.png" alt="Employer">
+<h3>Product Designer</h3>
+<ul>
+<li>
+ <i class="flaticon-send"></i>
+ Pune, Maharashtra, IN
+</li>
+<li>5 months ago</li>
+</ul>
+<p>We are Looking for a skilled Ul/UX designer amet conscu adiing elitsed do eusmod tempor</p>
+<span class="span-one">Accounting</span>
+<span class="span-two">FULL TIME</span>
+</a>
+</div>
+<div class="employer-item">
+<a href="job-details.html">
+<img src="assets/img/home-one/job2.png" alt="Employer">
+<h3>Sr. Shopify Developer</h3>
+<ul>
+<li>
+<i class="flaticon-send"></i>
+Houston, TX, USA
+</li>
+<li>4 months ago</li>
+</ul>
+<p>Responsible for managing skilled Ul/UX designer amet conscu adiing elitsed do eusmod</p>
+<span class="span-one">Accounting</span>
+<span class="span-two two">FULL TIME</span>
+</a>
+</div>
+<div class="employer-item">
+<a href="job-details.html">
+<img src="assets/img/home-one/job3.png" alt="Employer">
+<h3>Tax Manager</h3>
+<ul>
+<li>
+<i class="flaticon-send"></i>
+Pune, Maharashtra, IN
+</li>
+<li>6 months ago</li>
+</ul>
+<p>International collaborative a skilled Ul/UX designer amet conscu adiing elitsed do eusmod</p>
+<span class="span-one two">Broardcasting</span>
+<span class="span-two three">FREELANCER</span>
+</a>
+</div>
+</div>
+</div>
+-->
+<footer class="footer-area three pt-100 pb-70">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-4">
+<div class="footer-item three">
+<div class="footer-logo">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<ul>
+<li>
+<span>Address: </span>
+Mega Center, Magarpatta, Hadapsar, Pune, MH, IN, 411030
+</li>
+<li>
+<span>Message: hirelanes@gmail.com</span>
+</li>
+<li>
+<span>Phone: </span>
+<a href="tel:+918796775539">+918796775539</a>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+ <div class="footer-service">
+<h3>Our Services</h3>
+<ul>
+<li>
+<a href='jobs.html' target='_blank'>Accounting</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Teachers</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Customer Service</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Digital Marketing</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Web & Software Dev</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Science & Analytics</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-2">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Useful Links</h3>
+<ul>
+<li>
+<a href='privacy-policy.html' target='_blank'>Privacy Policy</a>
+</li>
+<li>
+<a href='terms-conditions.html' target='_blank'>Terms & Conditions</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Jobs</a>
+</li>
+<li>
+<a href='contact.html' target='_blank'>Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-newsletter">
+<h3>Newsletter</h3>
+<form class="newsletter-form" data-toggle="validator">
+<input type="email" class="form-control" placeholder="Your email*" name="EMAIL" required autocomplete="off">
+<button class="btn" type="submit">
+<i class="flaticon-send"></i>
+</button>
+<div id="validator-newsletter" class="form-result"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="copyright-area three">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+ <div class="copyright-item">
+<ul>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-facebook'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-twitter'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-linkedin-square'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-pinterest-alt'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-youtube'></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="copyright-item">
+<p>Copyright &copy HireLanes</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function difference_time(date, time){
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var currentdate = new Date(); 
+            //currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            date = date.split('index.html')
+            time = time.split(':')
+            if(yyyy != date[2]){
+                return 'Posted ' + (yyyy - date[2]) + ' Years Ago'
+            }else if(mm != date[0]){
+                return 'Posted ' + (mm - date[0]) + ' Month Ago'
+            }else if(dd != date[1]){
+                return 'Posted ' + (dd - date[1]) + ' Days Ago'
+            }else if(time[0] != currentdate.getHours()){
+                return 'Posted ' + (currentdate.getHours() - time[0]) + ' Hours Ago'
+            }else{
+                return 'Posted ' + (time[1] - currentdate.getMinutes()) + ' Minute Ago'
+            }
+    }
+
+    /*function apply_now(){
+        var body = {
+                "applied_job1": {
+                    "job_number": sessionStorage.getItem("jobid"),
+                    //"email": sessionStorage.getItem("jobemail")
+                    "email": "lalitbharindwal@gmail.com"
+                }
+            }
+            var key = "lalitbharindwal@gmail.com.json"
+            aws_config()
+            var s3 = new AWS.S3();   
+            var params = {
+                Bucket: "applied-job-details",
+                Key: key
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    //console.log(err, err.stack); // an error occurred
+                    params = {
+                        Body: JSON.stringify(body),
+                        Bucket: "applied-job-details",
+                        Key: key, 
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                        //console.log(err, err.stack); // an error occurred
+                        alert("Error")
+                        }else{
+                        //console.log(data);           // successful response
+                        alert("Job Applied Successfully")
+                        }   
+                    });
+                }
+                else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    var keyCount  = Object.keys(detail_json).length;
+                    detail_json["applied_job"+ (keyCount+1)] = {
+                        "job_number": sessionStorage.getItem("jobid"),
+                        //"email": sessionStorage.getItem("jobemail")
+                        "email": "lalitbharindwal@gmail.com"
+                };
+                params = {
+                        Body: JSON.stringify(detail_json),
+                        Bucket: "applied-job-details",
+                        Key: key,
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                        //console.log(err, err.stack); // an error occurred
+                        alert("Error")
+                        }else{
+                        //console.log(data);           // successful response
+                        alert("Job Applied Successfully")
+                        }   
+                });
+            }
+        });
+    }*/
+    
+    if(sessionStorage.getItem("companydata") != null && sessionStorage.getItem("companydata") != "null"){
+        document.getElementById("apply_now").innerHTML = "";
+    }
+
+    function apply_now(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const companyEmail = decodeURIComponent(escape(atob(urlParams.get('companyid'))));
+        const jobId = decodeURIComponent(escape(atob(urlParams.get('jobid'))));
+        if(sessionStorage.getItem("userdata") == null){
+            location = "login.html";
+        }else if(JSON.parse(sessionStorage.getItem("userdata"))['login']){
+            try{
+                aws_config()
+            }catch(err) {
+                location = "network_error.html";
+            }
+            var s3 = new AWS.S3();   
+            var params = {
+                Bucket: "job-posting-details",
+                Key: companyEmail + ".json"
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    console.log(err, err.stack); // an error occurred
+                }
+                else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    var keyCount  = Object.keys(detail_json[jobId]['applied_candidates']).length;
+                    detail_json[jobId]['applied_candidates']['candidate'+(keyCount+1)] =  JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'];
+                  
+                    params = {
+                        Body: JSON.stringify(detail_json),
+                        Bucket: "job-posting-details",
+                        Key: companyEmail + ".json", 
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                            //console.log(err, err.stack); // an error occurred
+                            alert("Network Error");
+                        }else{
+                        //console.log(data);           // successful response
+                            alert("Job Applied Successfully");
+                    }   
+                });
+            }
+        });
+
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: "appliedjobs/" + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] + ".json"
+			};
+        aws_config()
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                var body = {}
+                body['appliedjob1'] = {
+                    'email': sessionStorage.getItem("jobemail"),
+                    'jobid': sessionStorage.getItem("jobid")
+                }
+                put_object(body, "appliedjobs/" + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] + ".json")
+                alert("job Applied Successfully")
+            }
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                detail_json['appliedjob'+(keyCount+1)] = {
+                    'email': sessionStorage.getItem("jobemail"),
+                    'jobid': sessionStorage.getItem("jobid")
+                }
+                put_object(detail_json, "appliedjobs/" + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] + ".json")
+                document.getElementById("apply_now").innerHTML = '<a class="cmn-btn"">'+
+                                                                                 'Applied'+
+                                                                                 '<i class="bx bx-plus"></i>'+
+                                                                                 '</a>';
+                alert("job Applied Successfully")
+                
+            }
+        });
+        }else{
+            location = "login.html";
+        }
+    }
+
+    function details(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        try{
+            const companyEmail = decodeURIComponent(escape(atob(urlParams.get('companyid'))));
+            const jobId = decodeURIComponent(escape(atob(urlParams.get('jobid'))));
+        
+        if(companyEmail != null && jobId != null){
+            try {
+                aws_config();
+                var key = companyEmail + ".json";
+                var s3 = new AWS.S3();
+                var params = {
+                    Bucket: "job-posting-details",
+                    Key: key
+                    };
+                s3.getObject(params, function(err, data) {
+                    if(err) {
+                        //console.log(err)
+                        location = "network_error.html";
+                    }
+                    else{
+                        var detail_json   = data.Body.toString('utf-8'); // successful response
+                        detail_json = JSON.parse(detail_json);
+                        var id = jobId;
+                        var time = difference_time(detail_json[id]['posting_date'], detail_json[id]['posting_time']);
+                        document.getElementById("job_title").innerHTML = detail_json[id]['job_title'];
+                        document.getElementById("job_category").innerHTML = '<i class="bx bx-pie-chart-alt-2"></i>' + detail_json[id]['job_category'];
+                        document.getElementById("posting_date").innerHTML = '<i class="bx bx-time"></i>Posted date: ' + time;
+                        document.getElementById("job_description").innerHTML = detail_json[id]['job_description'];
+                        document.getElementById("our_company").innerHTML = detail_json[id]['our_company'];
+                        document.getElementById("responsibilities").innerHTML = '<li>'+ detail_json[id]['responsibilities'] +  '</li>';
+                        //<i class="bx bx-message-square-check"></i>
+                        document.getElementById("our_company").innerHTML = detail_json[id]['our_company'];
+                        document.getElementById("our_mission").innerHTML = detail_json[id]['our_mission'];
+                        document.getElementById("our_vision").innerHTML = detail_json[id]['our_vision'];
+                        document.getElementById("salary").innerHTML = detail_json[id]['salary'];
+                        document.getElementById("location").innerHTML = detail_json[id]['location'];
+                        document.getElementById("posting_time").innerHTML = time;
+                        document.getElementById("experience").innerHTML = detail_json[id]['experience'];
+                        document.getElementById("industry_type").innerHTML = detail_json[id]['industry_type'];
+                        document.getElementById("phone").innerHTML = '<a  href="tel:'+ detail_json[id]['phone'] +'">' + detail_json[id]['phone'] + '</a>';
+                        document.getElementById("email").innerHTML = detail_json[id]['email'];
+                    }
+                });
+            }catch(err) {
+                location = "network_error.html";
+            }
+        }else{
+                location = "network_error.html";
+        }
+    }catch(err){
+            location = "jobs-2.html";
+        }
+    }
+</script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/form-validator.min.js"></script>
+<script src="assets/js/contact-form-script.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/progressbar.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="js/candidate-detail.js"></script>
+<script src="../sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+</body>
+
+<!-- Mirrored from hirelanes.netlify.app/job-details by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:31:59 GMT -->
+</html>

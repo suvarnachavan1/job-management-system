@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<!-- Mirrored from hirelanes.netlify.app/jobs by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:29:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+<link rel="stylesheet" href="assets/css/nice-select.min.css">
+<link rel="stylesheet" href="assets/css/boxicons.min.css">
+<link rel="stylesheet" href="assets/fonts/flaticon.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+<link rel="stylesheet" href="assets/css/odometer.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/theme-dark.css">
+<title>HireLanes Jobs</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body onload="load_jobs()">
+
+<div class="loader">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <h1 style="text-align: center; color: white; font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;">HIRELANES</h1>
+            <div class="spinner"></div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-area fixed-top">
+
+<div class="mobile-nav">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+</div>
+
+<div class="main-nav three">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-light">
+<a class='navbar-brand' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class='nav-link' href='index.html'>HOME</a>
+        </li>
+        <li class="nav-item">
+            <span class="tooltip-span">New</span>
+            <a class='nav-link active' href='index.html'>JOBS</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle">DASHBOARD<i class='bx bx-chevron-down'></i></a>
+            <ul class="dropdown-menu">
+            <li class="nav-item" id="appliedJobs"></li>
+            <li class="nav-item">
+                <a class='nav-link' href='pricing.html'>PRICING PLANS</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='faq.html'>FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='privacy-policy.html'>PRIVACY POLICY</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='terms-conditions.html'>TERMS AND CONDITIONS</a>
+            </li>
+            <li class="nav-item" id="logout"></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+        <a class='nav-link' href='contact.html'>CONTACT</a>
+        </li>
+        <li class="nav-item">
+        <a class='nav-link' href='about.html'>ABOUT</a>
+        </li>
+        </ul>
+<div class="side-nav three" id="sidebar"></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+
+<div class="page-title-area">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="container">
+<div class="title-item">
+<h2>SEARCH JOBS</h2>
+<ul>
+<li>
+<img src="assets/img/home-three/title-img-two.png" alt="Image">
+<a href='index.html'>Home</a>
+</li>
+<li>
+<span>/</span>
+ </li>
+<li>
+Jobs
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="job-area-list ptb-100">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-5">
+<ul class="job-list-item align-items-center">
+<li>
+<a>Jobs Found <span id="result_found">0</span></a>
+<a class='rss' href='index.html'>
+<i class='bx bx-rss'></i>HireLanes Jobs
+</a>
+</li>
+<li>
+<span>
+    <input type="text" id="searchInput" class="form-control" placeholder="Search">
+</span>
+</li>
+<li>
+<span class="sort">Sort By:</span>
+<form>
+<div class="form-group">
+    <select>
+        <option>Posting Date</option>
+        <option>Experience</option>
+        <option>Salary</option>
+        <option selected disabled>Select</option>
+    </select>
+</div>
+</form>
+</li>
+</ul>
+<div class="jobsview" id="loading" style="overflow-y:auto; max-height: 60cm;"></div>
+
+<div class="jobsview" id="job_items" style="overflow-y:auto; max-height: 60cm;"></div>
+<style>
+.jobsview::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+   
+}
+
+.jobsview::-webkit-scrollbar
+{
+	width: 6px;
+}
+
+.jobsview::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #ff5a5a;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
+}
+</style>
+
+<!--
+<div class="pagination-area">
+<ul>
+<li>
+<a href="#">Prev</a>
+</li>
+<li>
+<a href="#">1</a>
+</li>
+<li>
+<a href="#">2</a>
+</li>
+<li>
+<a href="#">3</a>
+</li>
+<li>
+<a href="#">Next</a>
+</li>
+</ul>
+</div>
+-->
+</div>
+<div class="col-lg-4">
+    
+    <div class="left">
+        <!--<img src="assets/img/job-details1.png" alt="Details">-->
+        <h2 id="job_title"></h2>
+        <h6 id="job_category"></h6>
+    </div>
+    <div class="widget-area">
+        <div class="information widget-item">
+        <h3>Job Information</h3>
+        <ul>
+        <li>
+        <img src="assets/img/job-details-icon.png" alt="Details">
+        <h4>Salary</h4>
+        <span id="salary"></span>
+        </li>
+        <li>
+        <img src="assets/img/job-details-icon.png" alt="Details">
+        <h4>Location</h4>
+        <span id="location"></span>
+        </li>
+        <li>
+        <img src="assets/img/job-details-icon.png" alt="Details">
+        <h4>Posted</h4>
+        <span id="posting_time"></span>
+        </li>
+        <li>
+        <img src="assets/img/job-details-icon.png" alt="Details">
+        <h4>Experience</h4>
+        <span id="experience"></span>
+        </li>
+        <li>
+        <img src="assets/img/job-details-icon.png" alt="Details">
+        <h4>Industry</h4>
+        <span id="industry_type"></span>
+        </li>
+        <li>
+            <img src="assets/img/job-details-icon.png" alt="Details">
+            <h4>Phone</h4>
+            <p id="phone"></p>
+        </li>
+        <li>
+            <img src="assets/img/job-details-icon.png" alt="Details">
+            <h4>Email</h4>
+            <p id="email"></p>
+        </li>
+        </ul>
+        <hr>
+        <div id="apply_now"></div>
+        </div>
+        </div>
+        <div class="details-item">
+        <div class="details-inner">
+        <h3 id="jobDescription"></h3>
+        <p id="job_description"></p>
+        </div>
+        <div class="details-inner">
+        <h3 id="ourCompany"></h3>
+        <p id="our_company"></p>
+        </div>
+        
+        <div class="details-inner">
+        <h3 id="Responsibilities"></h3>
+        <ul  id="responsibilities"></ul>
+        </div>
+        <div class="details-inner">
+        <h3 id="ourMission"></h3>
+        <p id="our_mission"></p>
+        </div>
+        <div class="details-inner">
+        <h3 id="ourVision"></h3><p id="our_vision"></p>
+        </div>
+        </div>
+</div>
+
+
+<script>
+    function difference_time(date, time){
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var currentdate = new Date(); 
+            //currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            date = date.split('index.html')
+            time = time.split(':')
+            if(yyyy != date[2]){
+                return 'Posted ' + (yyyy - date[2]) + ' Years Ago'
+            }else if(mm != date[0]){
+                return 'Posted ' + (mm - date[0]) + ' Month Ago'
+            }else if(dd != date[1]){
+                return 'Posted ' + (dd - date[1]) + ' Days Ago'
+            }else if(time[0] != currentdate.getHours()){
+                return 'Posted ' + (currentdate.getHours() - time[0]) + ' Hours Ago'
+            }else{
+                return 'Posted ' + (time[1] - currentdate.getMinutes()) + ' Minute Ago'
+            }
+    }
+    function details(companyEmail, jobId){
+        try{
+        if(companyEmail != null && jobId != null){
+            try {
+                aws_config();
+                var key = companyEmail + ".json";
+                var s3 = new AWS.S3();
+                var params = {
+                    Bucket: "job-posting-details",
+                    Key: key
+                    };
+                s3.getObject(params, function(err, data) {
+                    if(err) {
+                        //console.log(err)
+                        location = "network_error.html";
+                    }
+                    else{
+                        var detail_json   = data.Body.toString('utf-8'); // successful response
+                        detail_json = JSON.parse(detail_json);
+                        var id = jobId;
+                        var time = difference_time(detail_json[id]['posting_date'], detail_json[id]['posting_time']);
+                        document.getElementById("job_title").innerHTML = detail_json[id]['job_title'];
+                        document.getElementById("job_category").innerHTML = detail_json[id]['job_category'];
+                        document.getElementById("jobDescription").innerHTML = "<hr><br>Job Description";
+                        document.getElementById("job_description").innerHTML = detail_json[id]['job_description'];
+                        document.getElementById("ourCompany").innerHTML = "Our Company";
+                        document.getElementById("our_company").innerHTML = detail_json[id]['our_company'];
+                        document.getElementById("Responsibilities").innerHTML = "Job Responsibilities"
+                        document.getElementById("responsibilities").innerHTML = '<li>'+ detail_json[id]['responsibilities'] +  '</li>';
+                        //<i class="bx bx-message-square-check"></i>
+                        document.getElementById("ourCompany").innerHTML = "Our Company";
+                        document.getElementById("our_company").innerHTML = detail_json[id]['our_company'];
+                        document.getElementById("ourMission").innerHTML = "Our Mission"
+                        document.getElementById("our_mission").innerHTML = detail_json[id]['our_mission'];
+                        document.getElementById("ourVision").innerHTML = "Our Vision"
+                        document.getElementById("our_vision").innerHTML = detail_json[id]['our_vision'];
+                        document.getElementById("salary").innerHTML = detail_json[id]['salary'];
+                        document.getElementById("location").innerHTML = detail_json[id]['location'];
+                        document.getElementById("posting_time").innerHTML = time;
+                        document.getElementById("experience").innerHTML = detail_json[id]['experience'];
+                        document.getElementById("industry_type").innerHTML = detail_json[id]['industry_type'];
+                        document.getElementById("phone").innerHTML = '<a  href="tel:'+ detail_json[id]['phone'] +'">' + detail_json[id]['phone'] + '</a>';
+                        document.getElementById("email").innerHTML = detail_json[id]['email'];
+                        document.getElementById("apply_now").innerHTML = 
+                        `<a class="cmn-btn" onclick="apply_now()">
+                        Apply Now
+                        <i class='bx bx-plus'></i>
+                        </a>`;
+                    }
+                });
+            }catch(err) {
+                location = "network_error.html";
+            }
+        }else{
+                location = "network_error.html";
+        }
+    }catch(err){
+            location = "jobs-2.html";
+        }
+    }
+</script>
+<div class="col-lg-3">
+<div class="job-list-right">
+<div class="job-list-all">
+<div class="search">
+<h3>SEARCH FILTER</h3>
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      var searchTerm = this.value.toLowerCase();
+      var contentDiv = document.getElementById('job_items');
+      var paragraphs = contentDiv.getElementsByTagName('div');
+      //console.log(this.value)
+      for (var i = 0; i < paragraphs.length; i++) {
+        var text = paragraphs[i].textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+          paragraphs[i].style.display = 'block';
+        } else {
+          paragraphs[i].style.display = 'none';
+        }
+      }
+    });
+</script>
+<h3>Category</h3>
+<form>
+<ul class="job-cmn-cat">
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+<label class="form-check-label" for="defaultCheck1">
+    Administration, business and management
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+<label class="form-check-label" for="defaultCheck2">
+    Alternative therapies
+ </label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+<label class="form-check-label" for="defaultCheck3">
+    Animals, land and environment
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+<label class="form-check-label" for="defaultCheck4">
+    Computing and ICT
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+<label class="form-check-label" for="defaultCheck5">
+    Construction and building
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+<label class="form-check-label" for="defaultCheck6">
+    Design, arts and crafts
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+<label class="form-check-label" for="defaultCheck7">
+    Education and training
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+<label class="form-check-label" for="defaultCheck8">
+    Engineering
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+<label class="form-check-label" for="defaultCheck9">
+    Facilities and property services
+</label>
+</div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Garage services
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Hairdressing and beauty
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Healthcare
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Heritage, culture and libraries
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Hospitality, catering and tourism
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        IT and Software
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Languages
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Legal and court services
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Manufacturing and production
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Performing arts and media
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Retail and customer services
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Science, mathematics and statistics
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Security, uniformed and protective services
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Social sciences and religion
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Social work and caring services
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Sport and leisure
+    </label>
+    </div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Transport, distribution and logistics
+    </label>
+    </div>
+</li>
+
+</ul>
+</form>
+</div>
+<br>
+<div class="search">
+    <h3>Industry Type</h3>
+    <form>
+    <ul class="job-cmn-cat">
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+        Agriculture
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+    <label class="form-check-label" for="defaultCheck2">
+        Automotive
+     </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+    <label class="form-check-label" for="defaultCheck3">
+        Banking & Finance
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+    <label class="form-check-label" for="defaultCheck4">
+        Construction
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+    <label class="form-check-label" for="defaultCheck5">
+        Education
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+    <label class="form-check-label" for="defaultCheck6">
+        Energy
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+    <label class="form-check-label" for="defaultCheck7">
+        Entertainment
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+    <label class="form-check-label" for="defaultCheck8">
+        Healthcare
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Hospitality & Tourism
+    </label>
+    </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Information Technology
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Manufacturing
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Media & Communication
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Retail
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Transportation & Logistics
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Real Estate
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Services
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Telecommunications
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Pharmaceuticals
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Aerospace
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Defense
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Environmental
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Legal
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Consulting
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Non-profit
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Human Resources
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Marketing & Advertising
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Research & Development
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Government
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Food & Beverage
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Art & Design
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Sports
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Fashion
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Utilities
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Insurance
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Waste Management
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Mining
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Forestry
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Printing & Publishing
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Telecom Equipment
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Chemicals
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Biotechnology
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Engineering
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Textiles
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Shipping
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Electronics
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Software
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Hardware
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Internet
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Computer Services
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Health & Wellness
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Financial Services
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Music
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Film & Motion Pictures
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Television
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Video Games
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Animation
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Performing Arts
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Cosmetics
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Logistics & Supply Chain
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Shipping & Freight
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Warehousing
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Postal Services
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Property Management
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Legal Services
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Accounting
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Advertising & Marketing
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Architecture & Planning
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Construction Management
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Design
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Sales/Marketing
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Event Planning & Services
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Security & Investigations
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Staffing & Recruiting
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Writing & Editing
+        </label>
+        </div>
+    </li>
+    </ul>
+    </form>
+</div>
+<div class="location-list cmn-padding">
+<h3>Location List</h3>
+<div class="search">
+    <form>
+    <ul class="job-cmn-cat">
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+        Pune
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+    <label class="form-check-label" for="defaultCheck2">
+        Mumbai
+     </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+    <label class="form-check-label" for="defaultCheck3">
+        Banglore
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+    <label class="form-check-label" for="defaultCheck4">
+        Hydrabad
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+    <label class="form-check-label" for="defaultCheck5">
+        Chennai
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+    <label class="form-check-label" for="defaultCheck6">
+        New Delhi
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+    <label class="form-check-label" for="defaultCheck7">
+        Noida
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+    <label class="form-check-label" for="defaultCheck8">
+        Kochi
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+    <label class="form-check-label" for="defaultCheck9">
+        Ahmedabad
+    </label>
+    </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">
+            Nagpur
+        </label>
+        </div>
+    </li>
+    </ul>
+    </form>
+    </div>
+</div>
+<h3>Job Type</h3>
+<div class="date cmn-padding">
+    <form>
+    <div class="job-cmn-cat flex-divide">
+    <ul class="left">
+        <li>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck31">
+            <label class="form-check-label" for="defaultCheck31">
+                All
+            </label>
+            </div>
+        </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck28">
+    <label class="form-check-label" for="defaultCheck28">
+        Full Time
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck29">
+    <label class="form-check-label" for="defaultCheck29">
+        Part Time
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck30">
+    <label class="form-check-label" for="defaultCheck30">
+        Remote
+    </label>
+    </div>
+    </li>
+    </ul>
+    <ul class="right">
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck32">
+    <label class="form-check-label" for="defaultCheck32">
+        Internship
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck33">
+    <label class="form-check-label" for="defaultCheck33">
+        Freelancing
+    </label>
+    </div>
+    </li>
+    <li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck34">
+    <label class="form-check-label" for="defaultCheck34">
+        Contract
+    </label>
+    </div>
+    </li>
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck34">
+        <label class="form-check-label" for="defaultCheck34">
+            Support
+        </label>
+        </div>
+        </li>
+    </ul>
+    </div>
+    </form>
+</div>
+
+<!--<div class="salary cmn-padding">
+<h3>Salary</h3>
+<form>
+<div class="job-cmn-cat flex-divide">
+<ul class="left">
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck23">
+<label class="form-check-label" for="defaultCheck23">
+Monthly
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck24">
+<label class="form-check-label" for="defaultCheck24">
+Daily
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck25">
+<label class="form-check-label" for="defaultCheck25">
+Yearly
+</label>
+</div>
+</li>
+</ul>
+<ul class="right">
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck26">
+<label class="form-check-label" for="defaultCheck26">
+Weekly
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck27">
+<label class="form-check-label" for="defaultCheck27">
+ Hourly
+</label>
+</div>
+</li>
+</ul>
+</div>
+<div class="form-group">
+<label class="range" for="formControlRangeTwo">$6778 - $9077</label>
+<input type="range" class="form-control-range" id="formControlRangeTwo">
+</div>
+</form>
+</div>-->
+<div class="date cmn-padding">
+<h3>Date Posted</h3>
+<form>
+<div class="job-cmn-cat flex-divide">
+<ul class="left">
+    <li>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck31">
+        <label class="form-check-label" for="defaultCheck31">
+        All
+        </label>
+        </div>
+    </li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck28">
+<label class="form-check-label" for="defaultCheck28">
+Last hour
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck29">
+<label class="form-check-label" for="defaultCheck29">
+One day ago
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck30">
+<label class="form-check-label" for="defaultCheck30">
+Last 2 days
+</label>
+</div>
+</li>
+</ul>
+<ul class="right">
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck32">
+<label class="form-check-label" for="defaultCheck32">
+Last 5 days
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck33">
+<label class="form-check-label" for="defaultCheck33">
+Last 14 days
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck34">
+<label class="form-check-label" for="defaultCheck34">
+Last 30 days
+</label>
+</div>
+</li>
+<li>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck34">
+    <label class="form-check-label" for="defaultCheck34">
+     Two months ago
+    </label>
+    </div>
+    </li>
+</ul>
+</div>
+</form>
+</div>
+
+<div class="preferredSalary cmn-padding">
+    <h3>Preferred Salary</h3>
+    <form>
+        <input type="text" class="form-control" placeholder="Salary (in Rs)">
+    </form>
+</div>
+
+<div class="experience cmn-padding">
+<h3>Experience</h3>
+<form>
+<div class="job-cmn-cat flex-divide">
+<ul class="left">
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck48">
+<label class="form-check-label" for="defaultCheck48">
+    Freshers
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck49">
+<label class="form-check-label" for="defaultCheck49">
+    1 - 2
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck50">
+<label class="form-check-label" for="defaultCheck50">
+    2 - 3
+</label>
+</div>
+</li>
+</ul>
+<ul class="right">
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck51">
+<label class="form-check-label" for="defaultCheck51">
+    3 - 4
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck52">
+<label class="form-check-label" for="defaultCheck52">
+    4 - 5
+</label>
+</div>
+</li>
+<li>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="defaultCheck53">
+<label class="form-check-label" for="defaultCheck53">
+    More than 5 Years
+</label>
+</div>
+</li>
+</ul>
+</div>
+</form>
+</div>
+</div>
+
+<div class="job">
+    <h3>Find A Job</h3>
+    <form>
+    <label>
+    <i class="flaticon-send"></i>
+    </label>
+    <input type="email" class="form-control" placeholder="Email address">
+    <button type="submit" class="btn">Get A Job Alert</button>
+    </form>
+</div>
+<div class="jecto-contact">
+<img src="assets/img/hirelanes-conatct.png" alt="Hirelanes">
+<div class="bottom">
+<span>Contact Now</span>
+<h3>
+<a href="tel:+917030314949">+91 8796775539</a>
+</h3>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<footer class="footer-area three pt-100 pb-70">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-4">
+<div class="footer-item three">
+<div class="footer-logo">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<ul>
+<li>
+<span>Address: </span>
+Mega Center, Hadapsar, pune
+</li>
+<li>
+<span>Message: </span>
+<a><span>hirelanes@gmail.com</span></a>
+</li>
+<li>
+<span>Phone: </span>
+ <a href="tel:+918796775539">+918796775539</a>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Our Services</h3>
+<ul>
+<li>
+<a href='jobs.html' target='_blank'>Accounting</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Teachers</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Customer Service</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Digital Marketing</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Web & Software Dev</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Science & Analytics</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-2">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Useful Links</h3>
+<ul>
+<li>
+<a href='privacy-policy.html' target='_blank'>Privacy Policy</a>
+</li>
+<li>
+<a href='terms-conditions.html' target='_blank'>Terms & Conditions</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Jobs</a>
+</li>
+<li>
+<a href='contact.html' target='_blank'>Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-newsletter">
+<h3>Newsletter</h3>
+<p>Subscribe Using Email</p>
+<form class="newsletter-form" data-toggle="validator">
+<input type="email" class="form-control" placeholder="Your email*" name="EMAIL" required autocomplete="off">
+<button class="btn" type="submit">
+<i class="flaticon-send"></i>
+ </button>
+<div id="validator-newsletter" class="form-result"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="copyright-area three">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="copyright-item">
+<ul>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-facebook'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-twitter'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-linkedin-square'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-pinterest-alt'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-youtube'></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="copyright-item">
+<p>Copyright &copy HireLanes</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function difference_time(date, time){
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var currentdate = new Date(); 
+            //currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            date = date.split('index.html')
+            time = time.split(':')
+            if(yyyy != date[2]){
+                return 'Posted ' + (yyyy - date[2]) + ' Years Ago'
+            }else if(mm != date[0]){
+                return 'Posted ' + (mm - date[0]) + ' Month Ago'
+            }else if(dd != date[1]){
+                return 'Posted ' + (dd - date[1]) + ' Days Ago'
+            }else if(time[0] != currentdate.getHours()){
+                return 'Posted ' + (currentdate.getHours() - time[0]) + ' Hours Ago'
+            }else{
+                return 'Posted ' + (time[1] - currentdate.getMinutes()) + ' Minute Ago'
+            }
+    }
+
+
+    function loading(){
+        for(var i = 0; i<7;i++){
+            document.getElementById("loading").innerHTML += 
+                    `<div class="employer-item">
+                    <a>
+                    <h2>Loading...</h2>
+                    <h5>Loading...</h5>
+                    <ul>
+                    <li>
+                    <i class="flaticon-send"></i>
+                    Loading...
+                    </li>
+                    <li>Loading...</li>
+                    </ul>
+                    <p>Loading...</p>
+                    <p>Loading...</p>
+                    <span class="span-one">Loading...</span>
+                    <span class="span-two">Loading...</span>
+                    </a>
+                    </div>`;
+                }
+            }
+
+    function load_jobs(){
+        loading()
+        try {
+            aws_config();
+            var s3 = new AWS.S3();
+            var params = {
+            Bucket: "job-posting-details",
+            };
+            var result_found = 0;
+            s3.listObjects(params, function(err, data) {
+            if (err){
+                //console.log(err, err.stack); // an error occurred
+                //console.log(err.message)
+                location = "network_error.html";
+            } 
+            else {
+            var keyCount  = Object.keys(data["Contents"]).length;
+            for(var i = 0; i< keyCount; i++){
+                aws_config()
+                var key = data["Contents"][i]['Key'];
+                sessionStorage.setItem("emailkey", data["Contents"][i]['Key'])
+                var s3 = new AWS.S3();
+                var params = {
+                    Bucket: "job-posting-details",
+                    Key: key
+                    };
+                s3.getObject(params, function(err, data) {
+                    if(err) {
+                        console.log(err)
+                    }
+                    else{
+                        var detail_json   = data.Body.toString('utf-8'); // successful response
+                        detail_json = JSON.parse(detail_json);
+                        var keyCount  = Object.keys(detail_json).length;
+                        
+                        var index = [];
+                        // build the index
+                        for (var x in detail_json) {
+                        index.push(x);
+                        }
+                        for(var i = 0; i< keyCount; i++){
+                            result_found++
+                            var time = difference_time(detail_json[index[i]]['posting_date'], detail_json[index[i]]['posting_time'])
+                            document.getElementById("job_items").innerHTML += 
+                            '<div class="employer-item" onclick="set_job_number(this)" id="'+ index[i]  +'">'+
+                            '<a  onclick="job_details(this)" id="'+ detail_json[index[i]]['email'] +'">'+
+                            '<h2>'+ detail_json[index[i]]['job_title'] +'</h2>'+
+                            '<h5>'+ detail_json[index[i]]['name_of_company'] +'</h5>'+
+                            '<ul>'+
+                            '<li>'+
+                            '<i class="flaticon-send"></i>'+
+                            detail_json[index[i]]['location']+
+                            '</li>'+
+                            '<li>'+ time +'</li>'+
+                            '</ul>'+
+                            '<p>Qualification: '+ detail_json[index[i]]['qualification'] + ' | '+ 'Experience: ' +  detail_json[index[i]]['experience']  +'</p>'+
+                            '<p>Salary: '+ detail_json[index[i]]['salary'] + ' | '+ 'Openings: ' +  detail_json[index[i]]['openings']  +'</p>'+
+                            '<span class="span-one">'+ detail_json[index[i]]['job_category'] +'</span>'+
+                            '<span class="span-two">'+ detail_json[index[i]]['job_type'] +'</span>'+
+                            '</a>'+
+                            '</div>';
+                        }
+                        document.getElementById("result_found").innerHTML = '('+ result_found +')';
+                        document.getElementById("loading").innerHTML = "";
+                    }
+                });
+            }
+        }    
+    });
+}
+    catch(err) {
+    location = "network_error.html";
+}
+}
+    
+function apply_now(){
+        if(sessionStorage.getItem("userdata") == null){
+            location = "login.html";
+        }else if(JSON.parse(sessionStorage.getItem("userdata"))['login']){
+            try{
+                aws_config()
+            }catch(err) {
+                location = "network_error.html";
+            }
+            const companyEmail = sessionStorage.getItem("companyId");
+            const jobId = sessionStorage.getItem("jobId");
+            var s3 = new AWS.S3();   
+            var params = {
+                Bucket: "job-posting-details",
+                Key: companyEmail + ".json"
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    console.log(err, err.stack); // an error occurred
+                }
+                else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    var keyCount  = Object.keys(detail_json[jobId]['applied_candidates']).length;
+                    detail_json[jobId]['applied_candidates']['candidate'+(keyCount+1)] =  JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'];
+                  
+                    params = {
+                        Body: JSON.stringify(detail_json),
+                        Bucket: "job-posting-details",
+                        Key: companyEmail + ".json", 
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                            //console.log(err, err.stack); // an error occurred
+                            alert("Network Error");
+                        }else{
+                        //console.log(data);           // successful response
+                            
+                            //alert("Job Applied Successfully");
+                    }   
+                });
+            }
+        });
+
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: "appliedjobs/" + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] + ".json"
+			};
+        aws_config()
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                var body = {}
+                body['appliedjob1'] = {
+                    'email': companyEmail,
+                    'jobid': jobId
+                }
+                put_object(body, "appliedjobs/" + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] + ".json")
+                sessionStorage.setItem("companyId", null);
+                sessionStorage.setItem("jobId", null);
+                alert("job Applied Successfully")
+            }
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                detail_json['appliedjob'+(keyCount+1)] = {
+                    'email': sessionStorage.getItem("jobemail"),
+                    'jobid': sessionStorage.getItem("jobid")
+                }
+                put_object(detail_json, "appliedjobs/" + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] + ".json")
+                document.getElementById("apply_now").innerHTML = '<a class="cmn-btn"">'+
+                                                                                 'Applied'+
+                                                                                 '<i class="bx bx-plus"></i>'+
+                                                                                 '</a>';
+                sessionStorage.setItem("companyId", null);
+                sessionStorage.setItem("jobId", null);
+                alert("job Applied Successfully");
+            }
+        });
+        }else{
+            location = "login.html";
+        }
+    }
+
+
+    var companyEmail;
+    function set_job_number(obj){
+        if (window.innerWidth <= 767) {
+            location = "job-details8b8d.html?companyid="+ btoa(unescape(encodeURIComponent(companyEmail))) +"&jobid=" + btoa(unescape(encodeURIComponent(obj.id)));
+        } else {
+            sessionStorage.setItem("companyId", companyEmail);
+            sessionStorage.setItem("jobId", obj.id);
+            details(companyEmail, obj.id)
+        }
+    }
+
+    function job_details(obj){
+        var id = obj.id;
+        companyEmail = id;
+    }
+</script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/form-validator.min.js"></script>
+<script src="assets/js/contact-form-script.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/progressbar.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="js/candidate-detail.js"></script>
+<script src="../sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+</body>
+
+<!-- Mirrored from hirelanes.netlify.app/jobs by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:29:24 GMT -->
+</html>

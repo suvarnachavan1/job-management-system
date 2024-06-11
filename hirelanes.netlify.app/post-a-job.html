@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from hirelanes.netlify.app/post-a-job by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:31:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+<link rel="stylesheet" href="assets/css/nice-select.min.css">
+<link rel="stylesheet" href="assets/css/boxicons.min.css">
+<link rel="stylesheet" href="assets/fonts/flaticon.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+<link rel="stylesheet" href="assets/css/odometer.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/theme-dark.css">
+<title>HireLanes Jobs</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body onload="load_jobs()">
+<div class="loader">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <h1 style="text-align: center; color: white; font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;">HIRELANES</h1>
+            <div class="spinner"></div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-area fixed-top">
+<div class="mobile-nav">
+    <a class='logo' href='index.html'>
+        <img src="assets/img/logo-three.png" alt="Logo">
+    </a>
+</div>
+
+<div class="main-nav three">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+        <a class='navbar-brand' href='index.html'>
+        <img src="assets/img/logo-three.png" alt="Logo">
+        </a>
+            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class='nav-link' href='index.html'>HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="tooltip-span">New</span>
+                        <a class='nav-link' href='jobs.html'>JOBS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link dropdown-toggle">DASHBOARD<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown-menu">
+                        <li class="nav-item" id="appliedJobs"></li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='pricing.html'>PRICING PLANS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='faq.html'>FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='privacy-policy.html'>PRIVACY POLICY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='terms-conditions.html'>TERMS AND CONDITIONS</a>
+                        </li>
+                        <li class="nav-item" id="logout"></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class='nav-link' href='contact.html'>CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class='nav-link' href='about.html'>ABOUT</a>
+                    </li>
+                </ul>
+            <div class="side-nav three" id="sidebar"></div>
+            </div>
+        </nav>
+    </div>
+</div>
+</div>
+
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="title-item">
+                <h2>Post A Job</h2>
+                <ul>
+                    <li>
+                        <img src="assets/img/home-three/title-img-two.png" alt="Image">
+                        <a href='index.html'>Home</a>
+                    </li>
+                <li>
+                    <span>/</span>
+                </li>
+                <li>
+                    Post A Job
+                </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<h1 style="text-align: center;margin-bottom: 2cm;">Posted Jobs</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" id="job_details"> </div>
+    </div>
+</div>
+<hr>
+<div class="post-job-area ptb-100">
+    <div class="container">
+    <form onSubmit="upload_job(); return false;">
+    <div class="post-item">
+    <div class="section-title">
+    <h2>Post A Job</h2>
+    <p>_________________________</p>
+    </div>
+    <div class="row">
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Full Name:
+    </label>
+    <input id="fullname" type="text" class="form-control" placeholder="Enter Your Fullname">
+    </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+        <label>
+        Position:
+        </label>
+        <select id="position">
+            <option>HR</option>
+            <option>Recruter</option>
+            <option>Consultant</option>
+        </select>
+        </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Email:
+    </label>
+    <input id="email" type="email" class="form-control" placeholder="example@gmail.com" disabled required>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Phone:
+    </label>
+    <input id="phone" type="text" class="form-control" placeholder="+123-456-789" required>
+    </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+        <label>
+        Name of Company:
+        </label>
+        <input id="name_of_company" type="text" class="form-control" placeholder="Enter Company Name" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+        <label>
+        Industry Type:
+        </label>
+        <div class="dropdown" >
+            <input class="form-control" type="text" id="industry_type" placeholder="Select an option" required>
+            <ul class="dropdown-content" id="dropdownList1">
+                <li id="DropdownList" onclick="selectOption1('IT Services & Consulting')">IT Services & Consulting</li>
+                <li id="DropdownList" onclick="selectOption1('BPO / Call Centre')">BPO / Call Centre</li>
+                <li id="DropdownList" onclick="selectOption1('Analytics / KPO / Research')">Analytics / KPO / Research</li>
+                <li id="DropdownList" onclick="selectOption1('Recruitment / Staffing')">Recruitment / Staffing</li>
+                <li id="DropdownList" onclick="selectOption1('Management Consulting')">Management Consulting</li>
+                <li id="DropdownList" onclick="selectOption1('Accounting / Auditing')">Accounting / Auditing</li>
+                <li id="DropdownList" onclick="selectOption1('Architecture / Interior Design')">Architecture / Interior Design</li>
+                <li id="DropdownList" onclick="selectOption1('Legal')">Legal</li>
+                <li id="DropdownList" onclick="selectOption1('Law Enforcement/ Security Services')">Law Enforcement/ Security Services</li>
+                <li id="DropdownList" onclick="selectOption1('Design')">Design</li>
+                <li id="DropdownList" onclick="selectOption1('Content Development/ Language')">Content Development/ Language</li>
+                <li id="DropdownList" onclick="selectOption1('Software Product')">Software Product</li>
+                <li id="DropdownList" onclick="selectOption1('Electronic Component/Semiconductors')">Electronic Component/Semiconductors</li>
+                <li id="DropdownList" onclick="selectOption1('Hardware and Networking')">Hardware and Networking</li>
+                <li id="DropdownList" onclick="selectOption1('Electronics Manufacturing')">Electronics Manufacturing</li>
+                <li id="DropdownList" onclick="selectOption1('Emerging Technologies')">Emerging Technologies</li>
+                <li id="DropdownList" onclick="selectOption1('Advertising & Marketing')">Advertising & Marketing</li>
+                <li id="DropdownList" onclick="selectOption1('Film / Music / Entertainment')">Film / Music / Entertainment</li>
+                <li id="DropdownList" onclick="selectOption1('Telecom / ISP')">Telecom / ISP</li>
+                <li id="DropdownList" onclick="selectOption1('Animation & VFX')">Animation & VFX</li>
+                <li id="DropdownList" onclick="selectOption1('Printing & Publishing')">Printing & Publishing</li>
+                <li id="DropdownList" onclick="selectOption1('Events / Live Entertainment')">Events / Live Entertainment</li>
+                <li id="DropdownList" onclick="selectOption1('TV / Radio')">TV / Radio</li>
+                <li id="DropdownList" onclick="selectOption1('Gaming')">Gaming</li>
+                <li id="DropdownList" onclick="selectOption1('Sports / Leisure & Recreation')">Sports / Leisure & Recreation</li>
+                <li id="DropdownList" onclick="selectOption1('Education / Training')">Education / Training</li>
+                <li id="DropdownList" onclick="selectOption1('E-Learning / EdTech')">E-Learning / EdTech</li>
+                <li id="DropdownList" onclick="selectOption1('Banking')">Banking</li>
+                <li id="DropdownList" onclick="selectOption1('Financial Services')">Financial Services</li>
+                <li id="DropdownList" onclick="selectOption1('Insurance')">Insurance</li>
+                <li id="DropdownList" onclick="selectOption1('FinTech / Payments')">FinTech / Payments</li>
+                <li id="DropdownList" onclick="selectOption1('Investment Banking / Venture Capital / Private Equity')">Investment Banking / Venture Capital / Private Equity</li>
+                <li id="DropdownList" onclick="selectOption1('NBFC')">NBFC</li>
+                <li id="DropdownList" onclick="selectOption1('Pharmaceutical & Life Sciences')">Pharmaceutical & Life Sciences</li>
+                <li id="DropdownList" onclick="selectOption1('Medical Services / Hospital')">Medical Services / Hospital</li>
+                <li id="DropdownList" onclick="selectOption1('Medical Devices & Equipment')">Medical Devices & Equipment</li>
+                <li id="DropdownList" onclick="selectOption1('Biotechnology')">Biotechnology</li>
+                <li id="DropdownList" onclick="selectOption1('Electronics Manufacturing')">Electronics Manufacturing</li>
+                <li id="DropdownList" onclick="selectOption1('Clinical Research / Contract Research')">Clinical Research / Contract Research</li>
+                <li id="DropdownList" onclick="selectOption1('Industrial Automation')">Industrial Automation</li>
+                <li id="DropdownList" onclick="selectOption1('Industrial Equipment / Machinery')">Industrial Equipment / Machinery</li>
+                <li id="DropdownList" onclick="selectOption1('Automobile')">Automobile</li>
+                <li id="DropdownList" onclick="selectOption1('Electrical Equipment')">Electrical Equipment</li>
+                <li id="DropdownList" onclick="selectOption1('Building Material')">Building Material</li>
+                <li id="DropdownList" onclick="selectOption1('Auto Components')">Auto Components</li>
+                <li id="DropdownList" onclick="selectOption1('Chemicals')">Chemicals</li>
+                <li id="DropdownList" onclick="selectOption1('Packaging & Containers')">Packaging & Containers</li>
+                <li id="DropdownList" onclick="selectOption1('Defence & Aerospace')">Defence & Aerospace</li>
+                <li id="DropdownList" onclick="selectOption1('Petrochemical / Plastics / Rubber')">Petrochemical / Plastics / Rubber</li>
+                <li id="DropdownList" onclick="selectOption1('Iron & Steel')">Iron & Steel</li>
+                <li id="DropdownList" onclick="selectOption1('Metals & Mining')">Metals & Mining</li>
+                <li id="DropdownList" onclick="selectOption1('Fertilizers / Pesticides / Agro chemicals')">Fertilizers / Pesticides / Agro chemicals</li>
+                <li id="DropdownList" onclick="selectOption1('Pulp & Paper')">Pulp & Paper</li>
+                <li id="DropdownList" onclick="selectOption1('Engineering & Construction')">Engineering & Construction</li>
+                <li id="DropdownList" onclick="selectOption1('Real Estate')">Real Estate</li>
+                <li id="DropdownList" onclick="selectOption1('Power')">Power</li>
+                <li id="DropdownList" onclick="selectOption1('Courier / Logistics')">Courier / Logistics</li>
+                <li id="DropdownList" onclick="selectOption1('Aviation')">Aviation</li>
+                <li id="DropdownList" onclick="selectOption1('Oil & Gas')">Oil & Gas</li>
+                <li id="DropdownList" onclick="selectOption1('Ports & Shipping')">Ports & Shipping</li>
+                <li id="DropdownList" onclick="selectOption1('Water Treatment / Waste Management')">Water Treatment / Waste Management</li>
+                <li id="DropdownList" onclick="selectOption1('Urban Transport')">Urban Transport</li>
+                <li id="DropdownList" onclick="selectOption1('Railways')">Railways</li>
+                <li id="DropdownList" onclick="selectOption1('Consumer, Retail & HospitalityRetail')">Consumer, Retail & Hospitality Retail</li>
+                <li id="DropdownList" onclick="selectOption1('Travel & Tourism')">Travel & Tourism</li>
+                <li id="DropdownList" onclick="selectOption1('FMCG')">FMCG</li>
+                <li id="DropdownList" onclick="selectOption1('Textile & Apparel')">Textile & Apparel</li>
+                <li id="DropdownList" onclick="selectOption1('Hotels & Restaurants')">Hotels & Restaurants</li>
+                <li id="DropdownList" onclick="selectOption1('Gems & Jewellery')">Gems & Jewellery</li>
+                <li id="DropdownList" onclick="selectOption1('Food Processing')">Food Processing</li>
+                <li id="DropdownList" onclick="selectOption1('Furniture & Furnishing')">Furniture & Furnishing</li>
+                <li id="DropdownList" onclick="selectOption1('Beverage')">Beverage</li>
+                <li id="DropdownList" onclick="selectOption1('Beauty & Personal Care')">Beauty & Personal Care</li>
+                <li id="DropdownList" onclick="selectOption1('Leather')">Leather</li>
+                <li id="DropdownList" onclick="selectOption1('NGO / Social Services / Industry Associations')">NGO / Social Services / Industry Associations</li>
+                <li id="DropdownList" onclick="selectOption1('Miscellaneous')">Miscellaneous</li>
+                <li id="DropdownList" onclick="selectOption1('Agriculture / Forestry / Fishing')">Agriculture / Forestry / Fishing</li>
+                <li id="DropdownList" onclick="selectOption1('Import & Export')">Import & Export</li>
+                <li id="DropdownList" onclick="selectOption1('Government / Public Administration')">Government / Public Administration</li>
+                <li id="DropdownList" onclick="selectOption1('IT Services')">IT Services</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Job Title:
+    </label>
+    <input id="job_title" type="text" class="form-control" placeholder="Enter Job Title" required> 
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Job Type:
+    </label>
+     <select id="job_type" required>
+        <option>Full Time</option>
+        <option>Part Time</option>
+        <option>Remote</option>
+        <option>Internship</option>
+        <option>Freelancing</option>
+    </select>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Job Category:
+    </label>
+    <div class="dropdown">
+        <input class="form-control" type="text" id="job_category" placeholder="Select an option" required>
+        <ul class="dropdown-content" id="dropdownList2">
+            <li id="DropdownList" onclick="selectOption2('Software Development')">Software Development</li>
+            <li id="DropdownList" onclick="selectOption2('Quality Assurance and Testing')">Quality Assurance and Testing</li>
+            <li id="DropdownList" onclick="selectOption2('Other Design')">Other Design</li>
+            <li id="DropdownList" onclick="selectOption2('DBA / Data warehousing')">DBA / Data warehousing</li>
+            <li id="DropdownList" onclick="selectOption2('Data Science & Machine Learning')">Data Science & Machine Learning</li>
+            <li id="DropdownList" onclick="selectOption2('DevOps')">DevOps</li>
+            <li id="DropdownList" onclick="selectOption2('IT Network')">IT Network</li>
+            <li id="DropdownList" onclick="selectOption2('Business Intelligence & Analytic')">Business Intelligence & Analytic</li>
+            <li id="DropdownList" onclick="selectOption2('BD / Pre Sales')">BD / Pre Sales</li>
+            <li id="DropdownList" onclick="selectOption2('Digital Marketing')">Digital Marketing</li>
+            <li id="DropdownList" onclick="selectOption2('Content Management (Print / Online / Electronic)')">Content Management (Print / Online / Electronic)</li>
+            <li id="DropdownList" onclick="selectOption2('Retail & B2C Sales')">Retail & B2C Sales</li>
+            <li id="DropdownList" onclick="selectOption2('IT Support')">IT Support</li>
+            <li id="DropdownList" onclick="selectOption2('Voice / Blended')">Voice / Blended</li>
+            <li id="DropdownList" onclick="selectOption2('IT Infrastructure Services')">IT Infrastructure Services</li>
+            <li id="DropdownList" onclick="selectOption2('IT Security')">IT Security</li>
+            <li id="DropdownList" onclick="selectOption2('IT Consulting')">IT Consulting</li>
+            <li id="DropdownList" onclick="selectOption2('Marketing')">Marketing</li>
+            <li id="DropdownList" onclick="selectOption2('Enterprise & B2B Sales')">Enterprise & B2B Sales</li>
+            <li id="DropdownList" onclick="selectOption2('Technology / IT')">Technology / IT</li>
+            <li id="DropdownList" onclick="selectOption2('UI / UX')">UI / UX</li>
+            <li id="DropdownList" onclick="selectOption2('Recruitment & Talent Acquisition')">Recruitment & Talent Acquisition</li>
+            <li id="DropdownList" onclick="selectOption2('Non Voice')">Non Voice</li>
+            <li id="DropdownList" onclick="selectOption2('Hardware')">Hardware</li>
+            <li id="DropdownList" onclick="selectOption2('Data Science & Analytics - Other')">Data Science & Analytics - Other</li>
+            <li id="DropdownList" onclick="selectOption2('IT & Information Security - Other')">IT & Information Security - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Corporate Communication')">Corporate Communication</li>
+            <li id="DropdownList" onclick="selectOption2('Corporate Training')">Corporate Training</li>
+            <li id="DropdownList" onclick="selectOption2('Product Management - Technology')">Product Management - Technology</li>
+            <li id="DropdownList" onclick="selectOption2('HR Operations')">HR Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Engineering & Manufacturing')">Engineering & Manufacturing</li>
+            <li id="DropdownList" onclick="selectOption2('Advertising & Creative')">Advertising & Creative</li>
+            <li id="DropdownList" onclick="selectOption2('Engineering')">Engineering</li>
+            <li id="DropdownList" onclick="selectOption2('Product Management - Other')">Product Management - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Accounting & Taxation')">Accounting & Taxation</li>
+            <li id="DropdownList" onclick="selectOption2('Customer Success, Service & Operations - Other')">Customer Success, Service & Operations - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Other Program / Project Management')">Other Program / Project Management</li>
+            <li id="DropdownList" onclick="selectOption2('Operations, Maintenance & Support')">Operations, Maintenance & Support</li>
+            <li id="DropdownList" onclick="selectOption2('Administration')">Administration</li>
+            <li id="DropdownList" onclick="selectOption2('Back Office')">Back Office</li>
+            <li id="DropdownList" onclick="selectOption2('Operations')">Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Customer Success')">Customer Success</li>
+            <li id="DropdownList" onclick="selectOption2('Pharmaceutical & Biotechnology')">Pharmaceutical & Biotechnology</li>
+            <li id="DropdownList" onclick="selectOption2('University Level Educator')">University Level Educator</li>
+            <li id="DropdownList" onclick="selectOption2('Sales Support & Operations')">Sales Support & Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Research & Development - Other')">Research & Development - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Content, Editorial & Journalism - Other')">Content, Editorial & Journalism - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Finance')">Finance</li>
+            <li id="DropdownList" onclick="selectOption2('Administration & Staff')">Administration & Staff</li>
+            <li id="DropdownList" onclick="selectOption2('Marketing and Communication - Other')">Marketing and Communication - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Hardware and Networks - Other')">Hardware and Networks - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Management Consulting')">Management Consulting</li>
+            <li id="DropdownList" onclick="selectOption2('Trading, Asset & Wealth Management')">Trading, Asset & Wealth Management</li>
+            <li id="DropdownList" onclick="selectOption2('Architecture & Interior Design')">Architecture & Interior Design</li>
+            <li id="DropdownList" onclick="selectOption2('Construction Engineering')">Construction Engineering</li>
+            <li id="DropdownList" onclick="selectOption2('Editing (Print / Online / Electronic)')">Editing (Print / Online / Electronic)</li>
+            <li id="DropdownList" onclick="selectOption2('Human Resources - Other')">Human Resources - Other</li>
+            <li id="DropdownList" onclick="selectOption2('eCommerce Operations')">eCommerce Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Procurement & Purchase')">Procurement & Purchase</li>
+            <li id="DropdownList" onclick="selectOption2('Subject / Specialization Teacher')">Subject / Specialization Teacher</li>
+            <li id="DropdownList" onclick="selectOption2('Banking Operations')">Banking Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Other Consulting')">Other Consulting</li>
+            <li id="DropdownList" onclick="selectOption2('Operations Support')">Operations Support</li>
+            <li id="DropdownList" onclick="selectOption2('Shipping Deck')">Shipping Deck</li>
+            <li id="DropdownList" onclick="selectOption2('Construction / Manufacturing')">Construction / Manufacturing</li>
+            <li id="DropdownList" onclick="selectOption2('Top Management')">Top Management</li>
+            <li id="DropdownList" onclick="selectOption2('Business Process Quality')">Business Process Quality</li>
+            <li id="DropdownList" onclick="selectOption2('Risk Management & Compliance - Other')">Risk Management & Compliance - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Teaching & Training - Other')">Teaching & Training - Other</li>
+            <li id="DropdownList" onclick="selectOption2('BFSI, Investments & Trading - Other')">BFSI, Investments & Trading - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Production & Manufacturing')">Production & Manufacturing</li>
+            <li id="DropdownList" onclick="selectOption2('Facility Management')">Facility Management</li>
+            <li id="DropdownList" onclick="selectOption2('After Sales Service & Repair')">After Sales Service & Repair</li>
+            <li id="DropdownList" onclick="selectOption2('Telecom')">Telecom3</li>
+            <li id="DropdownList" onclick="selectOption2('SCM & Logistics')">SCM & Logistics</li>
+            <li id="DropdownList" onclick="selectOption2('Investment Banking, Private Equity & VC')">Investment Banking, Private Equity & VC</li>
+            <li id="DropdownList" onclick="selectOption2('Journalism')">Journalism</li>
+            <li id="DropdownList" onclick="selectOption2('Market Research & Insights')">Market Research & Insights</li>
+            <li id="DropdownList" onclick="selectOption2('Legal Operations')">Legal Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Management')">Management</li>
+            <li id="DropdownList" onclick="selectOption2('Production & Manufacturing - Other')">Production & Manufacturing - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Quality Assurance - Other')">Quality Assurance - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Corporate Affairs')">Corporate Affairs</li>
+            <li id="DropdownList" onclick="selectOption2('Lending')">Lending</li>
+            <li id="DropdownList" onclick="selectOption2('Service Delivery')">Service Delivery</li>
+            <li id="DropdownList" onclick="selectOption2('Audit & Control')">Audit & Control</li>
+            <li id="DropdownList" onclick="selectOption2('Other Hospital Staff')">Other Hospital Staff</li>
+            <li id="DropdownList" onclick="selectOption2('Finance & Accounting - Other')">Finance & Accounting - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Healthcare & Life Sciences - Other')">Healthcare & Life Sciences - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Life Insurance')">Life Insurance</li>
+            <li id="DropdownList" onclick="selectOption2('Imaging & Diagnostics')">Imaging & Diagnostics</li>
+            <li id="DropdownList" onclick="selectOption2('Retail Store Operations')">Retail Store Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Treasury')">Treasury</li>
+            <li id="DropdownList" onclick="selectOption2('Employee Relations')">Employee Relations</li>
+            <li id="DropdownList" onclick="selectOption2('Health Informatics')">Health Informatics</li>
+            <li id="DropdownList" onclick="selectOption2('Assessment / Advisory')">Assessment / Advisory</li>
+            <li id="DropdownList" onclick="selectOption2('General Insurance')">General Insurance</li>
+            <li id="DropdownList" onclick="selectOption2('Fashion & Accessories')">Fashion & Accessories</li>
+            <li id="DropdownList" onclick="selectOption2('F&B Service')">F&B Service</li>
+            <li id="DropdownList" onclick="selectOption2('Nursing')">Nursing</li>
+            <li id="DropdownList" onclick="selectOption2('Legal & Regulatory - Other')">Legal & Regulatory - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Stores & Material Management')">Stores & Material Management</li>
+            <li id="DropdownList" onclick="selectOption2('Strategic & Top Management - Other')">Strategic & Top Management - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Life Skills / ECA Teacher')">Life Skills / ECA Teacher</li>
+            <li id="DropdownList" onclick="selectOption2('Compensation & Benefits')">Compensation & Benefits</li>
+            <li id="DropdownList" onclick="selectOption2('Tourism Services')">Tourism Services</li>
+            <li id="DropdownList" onclick="selectOption2('Editing')">Editing</li>
+            <li id="DropdownList" onclick="selectOption2('Recruitment Marketing & Branding')">Recruitment Marketing & Branding</li>
+            <li id="DropdownList" onclick="selectOption2('Media Production & Entertainment - Other')">Media Production & Entertainment - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Merchandising & Planning')">Merchandising & Planning</li>
+            <li id="DropdownList" onclick="selectOption2('Aviation Engineering')">Aviation Engineering</li>
+            <li id="DropdownList" onclick="selectOption2('Front Office & Guest Services')">Front Office & Guest Services</li>
+            <li id="DropdownList" onclick="selectOption2('Import & Export')">Import & Export</li>
+            <li id="DropdownList" onclick="selectOption2('Security / Fraud')">Security / Fraud</li>
+            <li id="DropdownList" onclick="selectOption2('Surveying')">Surveying</li>
+            <li id="DropdownList" onclick="selectOption2('Downstream')">Downstream</li>
+            <li id="DropdownList" onclick="selectOption2('Food, Beverage & Hospitality - Other')">Food, Beverage & Hospitality - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Direction')">Direction</li>
+            <li id="DropdownList" onclick="selectOption2('Merchandising, Retail & eCommerce - Other')">Merchandising, Retail & eCommerce - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Strategic Management')">Strategic Management</li>
+            <li id="DropdownList" onclick="selectOption2('Treasury & Forex')">Treasury & Forex</li>
+            <li id="DropdownList" onclick="selectOption2('CSR & Sustainability')">CSR & Sustainability</li>
+            <li id="DropdownList" onclick="selectOption2('Energy & Mining - Other')">Energy & Mining - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Environment Health and Safety - Other')">Environment Health and Safety - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Housekeeping & Laundry')">Housekeeping & Laundry</li>
+            <li id="DropdownList" onclick="selectOption2('Kitchen / F&B Production')">Kitchen / F&B Production</li>
+            <li id="DropdownList" onclick="selectOption2('Animation / Effects')">Animation / Effects</li>
+            <li id="DropdownList" onclick="selectOption2('Artists')">Artists</li>
+            <li id="DropdownList" onclick="selectOption2('Business')">Business</li>
+            <li id="DropdownList" onclick="selectOption2('Security Officer')">Security Officer</li>
+            <li id="DropdownList" onclick="selectOption2('Payroll & Transactions')">Payroll & Transactions</li>
+            <li id="DropdownList" onclick="selectOption2('Pilot')">Pilot</li>
+            <li id="DropdownList" onclick="selectOption2('Events & Banquet')">Events & Banquet</li>
+            <li id="DropdownList" onclick="selectOption2('Category Management & Operations')">Category Management & Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Procurement & Supply Chain - Other')">Procurement & Supply Chain - Other</li>
+            <li id="DropdownList" onclick="selectOption2('Operations / Strategy')">Operations / Strategy</li>
+            <li id="DropdownList" onclick="selectOption2('Port & Maritime Operations')">Port & Maritime Operations</li>
+            <li id="DropdownList" onclick="selectOption2('Shipping Engineering & Technical')">Shipping Engineering & Technical</li>
+            <li id="DropdownList" onclick="selectOption2('Language Teacher')">Language Teacher</li>
+            <li id="DropdownList" onclick="selectOption2('Preschool & Primary Education')">Preschool & Primary Education</li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>
+            Job Salary:
+            </label>
+            <input id="salary" type="text" class="form-control" placeholder="Enter Job Salary" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="form-group">
+    <label>
+    Job Experience:
+    </label>
+    <input id="experience" type="text" class="form-control" placeholder="Enter Experience" required>
+    </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>
+            Job Qualification:
+            </label>
+            <input id="qualification" type="text" class="form-control" placeholder="Enter Job Qualification" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+        <label>
+        Location:
+        </label>
+        <input id="location" type="text" class="form-control" placeholder="Pune" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>
+            Openings:
+            </label>
+            <input id="openings" type="text" class="form-control" placeholder="Enter Number of openings" required>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label>
+            Key Skills:
+            </label>
+            <input id="skills" type="text" class="form-control" placeholder="Enter Skills required">
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+        <label>
+        Job Description:
+        </label>
+        <textarea id="job_description" type="text" class="form-control" placeholder="Write Description about job..." style="height: 5cm;" required></textarea>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+        <label>
+        Roles & Responsibilities:
+        </label>
+        <textarea id="responsibilities" type="text" class="form-control" placeholder="Write Roles and Responsibilities about job..." style="height: 5cm;"></textarea>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+        <label>
+        Requirements:
+        </label>
+        <textarea id="requirements" type="text" class="form-control" placeholder="Write Requirements about job..." style="height: 5cm;"></textarea>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+        <label>
+        Our Company:
+        </label>
+        <textarea id="our_company" type="text" class="form-control" placeholder="Write Company Details" style="height: 5cm; display: block;"></textarea>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+        <label>
+        Job Highlights:
+        </label>
+        <textarea id="job_highlights" type="text" class="form-control" placeholder="Write Job Highlights"></textarea>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+        <label>
+        Our Mission:
+        </label>
+        <input id="our_mission" type="text" class="form-control" placeholder="Write Companies mission">
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+        <label>
+        Our Vision:
+        </label>
+        <input id="our_vision" type="text" class="form-control" placeholder="Write companies vision">
+        </div>
+    </div>
+    </div>
+    <button type="submit" class="btn">Post A Job</button>
+     </div>
+    </form>
+    </div>
+    </div>
+    <style>
+    #dropdownList1, #dropdownList2{
+        display: none;
+        position: absolute;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        z-index: 1;
+        height: 7cm;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+    #dropdownList1, #dropdownList2, #DropdownList {
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+    #dropdownList1, #dropdownList2, #DropdownList:hover {
+        background-color: rgb(199, 199, 199);
+    }
+    </style>
+    <script>
+    function upload_job(){
+        try{
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var date = mm + '/' + dd + '/' + yyyy;
+            var currentdate = new Date(); 
+            var time = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            var body = {
+                "job1": {
+                "posting_date": date,
+                "posting_time": time,
+                "fullname": document.getElementById("fullname").value,
+                "position": document.getElementById("position").value,
+                "email": JSON.parse(sessionStorage.getItem("companydata"))['company_email'],
+                "phone": document.getElementById("phone").value,
+                "name_of_company": document.getElementById("name_of_company").value,
+                "industry_type": document.getElementById("industry_type").value,
+                "job_title": document.getElementById("job_title").value,
+                "job_type": document.getElementById("job_type").value,
+                "job_category": document.getElementById("job_category").value,
+                "salary": document.getElementById("salary").value,
+                "experience": document.getElementById("experience").value,
+                "qualification":  document.getElementById("qualification").value,
+                "location": document.getElementById("location").value,
+                "openings": document.getElementById("openings").value,
+                "skills": document.getElementById("skills").value,
+                "job_description": document.getElementById("job_description").value,
+                "responsibilities": document.getElementById("responsibilities").value,
+                "requirements": document.getElementById("requirements").value,
+                "our_company": document.getElementById("our_company").value,
+                "job_highlights": document.getElementById("job_highlights").value,
+                "our_mission": document.getElementById("our_mission").value,
+                "our_vision": document.getElementById("our_vision").value,
+                "applied_candidates": {}
+                }
+            }
+            var key = JSON.parse(sessionStorage.getItem("companydata"))['company_email'] + '.json'
+            try{
+                aws_config()
+            }catch(err) {
+                location = "network_error.html";
+            }
+            var s3 = new AWS.S3();   
+            var params = {
+                Bucket: "job-posting-details",
+                Key: key
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    //console.log(err, err.stack); // an error occurred
+                    params = {
+                        Body: JSON.stringify(body),
+                        Bucket: "job-posting-details",
+                        Key: JSON.parse(sessionStorage.getItem("companydata"))['company_email'] + '.json', 
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                        //console.log(err, err.stack); // an error occurred
+                        
+                        }else{
+                        //console.log(data);           // successful response
+                        document.getElementById("job_details").innerHTML = " ";
+                        alert("Job Posted Successfully")
+                        load_jobs();
+                        }   
+                });
+                    
+                }else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    var keyCount  = Object.keys(detail_json).length;
+                    var index = [];
+                    // build the index
+                    for (var x in detail_json) {
+                    index.push(x);        
+                    }
+                    if(keyCount == 0){
+                        params = {
+                        Body: JSON.stringify(body),
+                        Bucket: "job-posting-details",
+                        Key: JSON.parse(sessionStorage.getItem("companydata"))['company_email'] + '.json', 
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                        console.log(err, err.stack); // an error occurred
+                        
+                        }else{
+                        console.log(data);           // successful response
+                        alert("Job Posted Successfully")
+                        }   
+                    });
+                    }else{
+                        index.sort((a, b) => {
+                            // Extract the last numbers from strings
+                            const getLastNumber = (str) => {
+                                const matches = str.match(/\d+$/); // Match the last continuous digits
+                                return matches ? parseInt(matches[0]) : 0; // Convert matched digits to a number
+                            };
+                            const lastNumberA = getLastNumber(a);
+                            const lastNumberB = getLastNumber(b);
+                            return lastNumberB - lastNumberA; // Sort by the last numbers in descending order
+                        });
+                        var temp = parseInt(index[0].match(/\d+/g))
+                        detail_json['job'+ (temp + 1)] = {
+                        "posting_date": date,
+                        "posting_time": time,
+                        "fullname": document.getElementById("fullname").value,
+                        "position": document.getElementById("position").value,
+                        "email": JSON.parse(sessionStorage.getItem("companydata"))['company_email'],
+                        "phone": document.getElementById("phone").value,
+                        "name_of_company": document.getElementById("name_of_company").value,
+                        "industry_type": document.getElementById("industry_type").value,
+                        "job_title": document.getElementById("job_title").value,
+                        "job_type": document.getElementById("job_type").value,
+                        "job_category": document.getElementById("job_category").value,
+                        "salary": document.getElementById("salary").value,
+                        "experience": document.getElementById("experience").value,
+                        "qualification":  document.getElementById("qualification").value,
+                        "location": document.getElementById("location").value,
+                        "openings": document.getElementById("openings").value,
+                        "skills": document.getElementById("skills").value,
+                        "job_description": document.getElementById("job_description").value,
+                        "responsibilities": document.getElementById("responsibilities").value,
+                        "requirements": document.getElementById("requirements").value,
+                        "our_company": document.getElementById("our_company").value,
+                        "job_highlights": document.getElementById("job_highlights").value,
+                        "our_mission": document.getElementById("our_mission").value,
+                        "our_vision": document.getElementById("our_vision").value,
+                        "applied_candidates": {}
+                    };
+                    params = {
+                            Body: JSON.stringify(detail_json),
+                            Bucket: "job-posting-details",
+                            Key: JSON.parse(sessionStorage.getItem("companydata"))['company_email']+ '.json', 
+                            ServerSideEncryption: "AES256", 
+                            StorageClass: "STANDARD_IA"
+                        };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                        console.log(err, err.stack); // an error occurred
+                        
+                        }else{
+                        //console.log(data);           // successful response
+                        document.getElementById("job_details").innerHTML = " ";
+                        alert("Job Posted Successfully");
+                        load_jobs();
+                    }   
+                });
+            }      
+        }
+        });
+        }  catch(err) {
+            location = "network_error.html";
+        }
+    }
+
+    //Industry Type DropDown
+    function selectOption1(option) {
+    document.getElementById('industry_type').value = option;
+    closeDropdown1();
+    }
+
+    function closeDropdown1() {
+        document.getElementById('dropdownList1').style.display = 'none';
+    }
+
+    document.getElementById('industry_type').addEventListener('click', function() {
+        document.getElementById('dropdownList1').style.display = 'block';
+    });
+
+    // Close dropdown when clicking outside the dropdown
+    document.addEventListener('click', function(e) {
+        const dropdown1 = document.getElementById('dropdownList1');
+        const input1 = document.getElementById('industry_type');
+        if (e.target !== dropdown1 && e.target !== input1) {
+            closeDropdown1();
+        }
+    });
+
+    //Job Category DropDown
+    function selectOption2(option) {
+    document.getElementById('job_category').value = option;
+    closeDropdown2();
+    }
+
+    function closeDropdown2() {
+        document.getElementById('dropdownList2').style.display = 'none';
+    }
+
+    document.getElementById('job_category').addEventListener('click', function() {
+        document.getElementById('dropdownList2').style.display = 'block';
+    });
+
+    // Close dropdown when clicking outside the dropdown
+    document.addEventListener('click', function(e) {
+        const dropdown2 = document.getElementById('dropdownList2');
+        const input2 = document.getElementById('job_category');
+        if (e.target !== dropdown2 && e.target !== input2) {
+            closeDropdown2();
+        }
+    });
+    </script>
+
+<footer class="footer-area three pt-100 pb-70">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-4">
+<div class="footer-item three">
+<div class="footer-logo">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<ul>
+<li>
+<span>Address: </span>
+Mega Center, Hadapsar, pune
+</li>
+<li>
+<span>Message: </span>
+<a><span>hirelanes@gmail.com</span></a>
+</li>
+<li>
+<span>Phone: </span>
+ <a href="tel:7030314949">7030314949</a>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Our Services</h3>
+<ul>
+<li>
+<a href='jobs.html' target='_blank'>Accounting</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Teachers</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Customer Service</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Digital Marketing</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Web & Software Dev</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Science & Analytics</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-2">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Useful Links</h3>
+<ul>
+<li>
+<a href='privacy-policy.html' target='_blank'>Privacy Policy</a>
+</li>
+<li>
+<a href='terms-conditions.html' target='_blank'>Terms & Conditions</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Jobs</a>
+</li>
+<li>
+<a href="candidates.html" target="_blank">Candidates</a>
+</li>
+<li>
+<a href="blog.html" target="_blank">Blog</a>
+</li>
+<li>
+<a href='contact.html' target='_blank'>Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-newsletter">
+<h3>Newsletter</h3>
+<p>Subscribe for Newsletter</p>
+<form class="newsletter-form" data-toggle="validator">
+<input type="email" class="form-control" placeholder="Your email*" name="EMAIL" required autocomplete="off">
+<button class="btn" type="submit">
+<i class="flaticon-send"></i>
+ </button>
+<div id="validator-newsletter" class="form-result"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="copyright-area three">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="copyright-item">
+<ul>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-facebook'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-twitter'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-linkedin-square'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-pinterest-alt'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-youtube'></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="copyright-item">
+<p>Copyright &copy HireLanes</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function difference_time(date, time){
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var currentdate = new Date(); 
+            //currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+            date = date.split('index.html')
+            time = time.split(':')
+            if(yyyy != date[2]){
+                return 'Posted ' + (yyyy - date[2]) + ' Years Ago'
+            }else if(mm != date[0]){
+                return 'Posted ' + (mm - date[0]) + ' Month Ago'
+            }else if(dd != date[1]){
+                return 'Posted ' + (dd - date[1]) + ' Days Ago'
+            }else if(time[0] != currentdate.getHours()){
+                return 'Posted ' + (currentdate.getHours() - time[0]) + ' Hours Ago'
+            }else{
+                return 'Posted ' + (time[1] - currentdate.getMinutes()) + ' Minute Ago'
+            }
+    }
+
+    function load_jobs(){
+        try{
+            aws_config()
+            document.getElementById("email").value = JSON.parse(sessionStorage.getItem("companydata"))['company_email']
+            var key = JSON.parse(sessionStorage.getItem("companydata"))['company_email']+ '.json';
+            var s3 = new AWS.S3();
+            var params = {
+                Bucket: "job-posting-details",
+                Key: key
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    //console.log(err)
+                }
+                else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    var keyCount  = Object.keys(detail_json).length;
+                    var index = [];
+                    // build the index
+                    for (var x in detail_json) {
+                    index.push(x);
+                    }
+                    for(var i = 0; i< keyCount; i++){
+                        var time = difference_time(detail_json[index[i]]['posting_date'], detail_json[index[i]]['posting_time'])
+                        document.getElementById("job_details").innerHTML += 
+                        '<div class="employer-item" >'+
+                        '<a onclick="set_job_number(this)" id="'+ index[i] +'">'+
+                        '<h2>'+ detail_json[index[i]]['job_title'] +'</h2>'+
+                        '<h5>'+ detail_json[index[i]]['name_of_company'] +'</h5>'+
+                        '<ul>'+
+                        '<li>'+
+                        '<i class="flaticon-send"></i>'+
+                        detail_json[index[i]]['location']+
+                        '</li>'+
+                        '<li>'+ time +'</li>'+
+                        '</ul>'+
+                        '<p>Qualification: '+ detail_json[index[i]]['qualification'] + ' | '+ 'Experience: ' +  detail_json[index[i]]['experience']  +'</p>'+
+                        '<p>Salary: '+ detail_json[index[i]]['salary'] + ' | '+ 'Openings: ' +  detail_json[index[i]]['openings']  +'</p>'+
+                        '<span class="span-one">'+ detail_json[index[i]]['job_category'] +'</span>'+
+                        '<span class="span-two">'+ detail_json[index[i]]['job_type'] +'</span><hr><br>'+
+                        '<span class="span-three" onclick="set_job_number(this)" id="'+ index[i]  +'">View Job | </span>'+
+                        '<span class="span-four"><a onclick="delete_job(this)" id="delete_'+ index[i] +'">Delete Job </a></span>'+
+                        '<span class="span-five"><a onclick="applied_candidates(this)" id="applied_'+ index[i] +'">| Applied Candidates</a></span>'+
+                        '</a>'+
+                        '</div>';
+                    }
+                }
+            });
+        }
+        catch(err) {
+            location = "company-login-2.html";
+        }
+    }
+
+    var jobId;
+    function set_job_number(obj){
+        jobId = obj.id;
+        location = "job-details8b8d.html?companyid="+ btoa(unescape(encodeURIComponent(JSON.parse(sessionStorage.getItem("companydata"))['company_email']))) +"&jobid=" + btoa(unescape(encodeURIComponent(jobId)));
+    }
+
+    function delete_job(obj){
+        var id = obj.id;
+        aws_config()
+        var key =  JSON.parse(sessionStorage.getItem("companydata"))['company_email']+ '.json';
+        var s3 = new AWS.S3();
+        var params = {
+            Bucket: "job-posting-details",
+            Key: key
+            };
+        s3.getObject(params, function(err, data) {
+            if(err) {
+                console.log(err)
+            }
+            else{
+                var detail_json   = data.Body.toString('utf-8'); // successful response
+                detail_json = JSON.parse(detail_json);
+                delete detail_json[id.split('_')[1]];
+                params = {
+                        Body: JSON.stringify(detail_json),
+                        Bucket: "job-posting-details",
+                        Key: JSON.parse(sessionStorage.getItem("companydata"))['company_email']+ '.json',
+                        ServerSideEncryption: "AES256", 
+                        StorageClass: "STANDARD_IA"
+                    };
+                    s3.putObject(params, function(err, data) {
+                        if(err){
+                        //console.log(err, err.stack); // an error occurred
+                        
+                        }else{
+                        //console.log(data);           // successful response
+                        document.getElementById("job_details").innerHTML = "Job Deleted Successfully";
+                        }   
+                });
+            }
+        });
+    }
+
+    function applied_candidates(obj){
+        var id = obj.id;
+        id = id.split("_")[1];
+        sessionStorage.setItem("jobid", id);
+        location = "applied_candidates.html";
+    }
+    
+</script>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/form-validator.min.js"></script>
+<script src="assets/js/contact-form-script.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/progressbar.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="js/postjob.html"></script>
+<script src="js/candidate-detail.js"></script>
+<script src="../sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+</body>
+
+<!-- Mirrored from hirelanes.netlify.app/post-a-job by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:31:59 GMT -->
+</html>

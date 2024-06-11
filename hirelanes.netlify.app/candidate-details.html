@@ -1,0 +1,2683 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from hirelanes.netlify.app/candidate-details by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:29:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+<link rel="stylesheet" href="assets/css/nice-select.min.css">
+<link rel="stylesheet" href="assets/css/boxicons.min.css">
+<link rel="stylesheet" href="assets/fonts/flaticon.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+<link rel="stylesheet" href="assets/css/odometer.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/theme-dark.css">
+<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<script src='../kit.fontawesome.com/a076d05399.html' crossorigin='anonymous'></script>
+<script src="../code.jquery.com/jquery-3.4.1.js"></script>
+<title>HireLanes Jobs</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body onload="load_data()">
+
+<div class="loader">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <h1 style="text-align: center; color: white; font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;">HIRELANES</h1>
+            <div class="spinner"></div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-area fixed-top">
+<div class="mobile-nav">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+</div>
+
+<div class="main-nav three">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-light">
+<a class='navbar-brand' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class='nav-link' href='index.html'>HOME</a>
+        </li>
+        <li class="nav-item">
+            <span class="tooltip-span">New</span>
+            <a class='nav-link active' href='jobs.html'>JOBS</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle">DASHBOARD<i class='bx bx-chevron-down'></i></a>
+            <ul class="dropdown-menu">
+            <li class="nav-item" id="appliedJobs"></li>
+            <li class="nav-item">
+                <a class='nav-link' href='pricing.html'>PRICING PLANS</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='faq.html'>FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='privacy-policy.html'>PRIVACY POLICY</a>
+            </li>
+            <li class="nav-item">
+                <a class='nav-link' href='terms-conditions.html'>TERMS AND CONDITIONS</a>
+            </li>
+            <li class="nav-item" id="logout"></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+        <a class='nav-link' href='contact.html'>CONTACT</a>
+        </li>
+        <li class="nav-item">
+        <a class='nav-link' href='about.html'>ABOUT</a>
+        </li>
+    </ul>
+<div class="side-nav three" id="sidebar"></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+
+<div class="page-title-area two three">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="container">
+<div class="row align-items-end">
+<div class="col-lg-8">
+<div class="left two">
+<!--<img src="assets/img/candidate-details1.jpg" alt="Details">-->
+<h2 id="name"></h2>
+<ul>
+<li id="role"></li>
+<li id="phone_number"></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="right">
+<ul>
+
+<li>
+<a href="#">
+<i class='bx bx-share-alt'></i>
+Share
+</a>
+</li>
+<li>
+<a href="#">
+<i class='bx bxs-report'></i>
+Report
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<style>
+.file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+</style>
+
+<div class="person-details-area ptb-100" id="cv">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+    <!--
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 style="text-align: center;">Upload Resume</h3>
+        </div>
+        <div class="col-lg-9" style="margin-bottom: 8px;">
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+            <div class="file-upload">
+                <div class="file-select">
+                    <div class="file-select-button" id="fileName">Choose File</div>
+                    <div class="file-select-name" id="noFile">No file chosen...</div> 
+                    <input type="file" name="chooseFile" id="chooseFile">
+                    
+                </div>
+
+                
+            </div>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <button class="button-36" onclick="upload_resume()" >Upload</a>
+        </div>
+    </div>-->
+    <style>
+        /* CSS */
+        .button-36 {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        flex-shrink: 0;
+        font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        height: 2.3rem;
+        padding: 0 1.6rem;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        }
+
+        .button-36:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+        }
+
+        @media (min-width: 768px) {
+        .button-36 {
+            padding: 0 2.6rem;
+        }
+        }
+    </style>
+    <script>
+    $('#chooseFile').bind('change', function () {
+        var filename = $("#chooseFile").val();
+        if (/^\s*$/.test(filename)) {
+          $(".file-upload").removeClass('active');
+          $("#noFile").text("No file chosen..."); 
+        }
+        else {
+          $(".file-upload").addClass('active');
+          $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+        }
+      });
+
+      function upload_resume(){
+        var file = document.getElementById("chooseFile");
+        var reader = new FileReader();
+        var body = {
+            "resume": reader
+        }
+        var key = "resume/lalitbharindwal@gmail.com/"+(file.value).split("\\").pop()
+        aws_config()
+        var s3 = new AWS.S3();
+        put_object(body, key)
+      }
+    </script>
+
+<div class="details-item">
+
+<div class="profile">
+<h3>My Profile <a onclick="edit_profile()"><i class='far fa-edit' style='margin-top: 1cm; font-size:18px;color:rgb(255, 65, 65); font-weight: bold;'>Edit Profile</i></a><a onclick="delete_profile()" style="color: rgb(87, 0, 168); font-family: 'Times New Roman', Times, serif; font-size: 16px; margin-left: 8px;" id="delete_profile"></a></h3>
+<div id="edit_profile">
+    <p id="my_profile"></p>
+</div>
+
+</div>
+<h3>Education <a onclick="add_education()"><i class='far fa-edit' style='font-size:18px;color:rgb(255, 65, 65); font-weight: bold;'>Add Education</i></a><a onclick="delete_education()" style="color: rgb(87, 0, 168); font-family: 'Times New Roman', Times, serif; font-size: 16px; margin-left: 8px;" id="delete_profile"></a></h3>
+<div id="add_education" class="custom-select"> 
+</div>
+
+<div class="work bottom-item" id="education_details"></div>
+
+<div id="edit_education" class="custom-select"></div>
+    <div class="work bottom-item">
+    <ul>
+    <li>
+    <img src="assets/img/home-three/title-img.png" alt="Icon">
+    Class XII
+    </li><a onclick="add_classxii()"><i class='far fa-edit' style='font-size: 15px;color:rgb(255, 65, 65); font-weight: bold; margin-left: 10px;'>Add Class XII</i></a><a onclick="delete_classxii()" style="color: rgb(87, 0, 168); font-family: 'Times New Roman', Times, serif; font-size: 16px; margin-left: 8px;" id="delete_classxii"></a>
+    </ul>
+    <div id="add_classxii" class="custom-select"></div>
+    <div class="work bottom-item" id="classxii_details">
+        <p>Add class XII Details</p>
+    </div>
+    <ul>
+        <li>
+        <img src="assets/img/home-three/title-img.png" alt="Icon">
+        Class X
+        </li><a onclick="add_classx()"><i class='far fa-edit' style='font-size: 15px;color:rgb(255, 65, 65); font-weight: bold; margin-left: 10px;'>Add Class X</i></a><a onclick="delete_classx()" style="color: rgb(87, 0, 168); font-family: 'Times New Roman', Times, serif; font-size: 16px; margin-left: 8px;" id="delete_classx"></a>
+    </ul>
+        <div id="add_classx" class="custom-select">
+            
+        </div>
+        <div class="work bottom-item" id="classx_details">
+            <p>Add class X Details</p>
+        </div>
+    </div>
+
+<div class="work bottom-item">
+<h3>Work Experience <a onclick="add_experience()"><i class='far fa-edit' style='font-size:18px;color:rgb(255, 65, 65); font-weight: bold;'>Add Experience</i></a><a onclick="delete_experience()" style="color: rgb(87, 0, 168); font-family: 'Times New Roman', Times, serif; font-size: 16px; margin-left: 8px;" id="delete_profile"></a></h3>
+<div id="add_experience" class="custom-select"></div>
+<div class="work bottom-item" id="experience_details"></div>
+<div id="edit_experience" class="custom-select"></div>
+</div>
+
+<!--
+<div class="skills">
+<h3>Skills</h3>
+<div class="skill-wrap">
+<div class="skill">
+<h3>HTML/CSS</h3>
+<div class="skill-bar skill1 animate__slideInLeft animate__animated">
+<span class="skill-count1">10%</span>
+</div>
+</div>
+<div class="skill">
+<h3>WORDPRESS</h3>
+<div class="skill-bar skill2 animate__slideInLeft animate__animated">
+<span class="skill-count2">80%</span>
+</div>
+</div>
+<div class="skill">
+<h3>PHOTOSHOP</h3>
+<div class="skill-bar skill3 animate__slideInLeft animate__animated">
+<span class="skill-count3">90%</span>
+</div>
+</div>
+<div class="skill">
+<h3>PHP</h3>
+<div class="skill-bar skill4 animate__slideInLeft animate__animated">
+<span class="skill-count4">70%</span>
+</div>
+</div>
+<div class="skill">
+<h3>TEAM MANAGEMENT</h3>
+<div class="skill-bar skill5 animate__slideInLeft animate__animated">
+<span class="skill-count5">80%</span>
+</div>
+</div>
+<div class="skill">
+<h3>SERVICE OF QUALITY</h3>
+<div class="skill-bar skill6 animate__slideInLeft animate__animated">
+<span class="skill-count6">90%</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="portfolio">
+<h3>Portfolio</h3>
+<div class="row">
+<div class="col-lg-4">
+<div class="img">
+<img src="assets/img/portfolio1.jpg" alt="Portfolio">
+</div>
+</div>
+<div class="col-lg-4">
+<div class="img">
+<img src="assets/img/portfolio2.jpg" alt="Portfolio">
+ </div>
+</div>
+<div class="col-lg-4">
+<div class="img">
+<img src="assets/img/portfolio3.jpg" alt="Portfolio">
+</div>
+</div>
+</div>
+</div>
+
+<div class="client">
+<img src="assets/img/candidate-details-client1.png" alt="Candidate Details">
+<h3>Devit Killer</h3>
+<span>January 12, 2020</span>
+<p>Software hack from an initial feasibility study, continuing through l implna business you have to be But we know there's a better</p>
+<ul>
+<li>
+<span>05</span>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+</ul>
+</div>
+
+<div class="review">
+<h3>Add Review</h3>
+<span>Your rating for this listing</span>
+<ul>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+<li>
+<i class='bx bxs-star checked'></i>
+</li>
+</ul>
+<form>
+<div class="form-group form-check">
+<input type="checkbox" class="form-check-input" id="exampleCheck59">
+<label class="form-check-label" for="exampleCheck59">Save my name, email, and website in this browser for the next time I comment.</label>
+</div>
+<div class="row">
+<div class="col-lg-6">
+<div class="form-group">
+<i class='bx bx-user'></i>
+<input type="text" class="form-control" placeholder="Name*">
+</div>
+</div>
+<div class="col-lg-6">
+<div class="form-group"> 
+<i class='bx bx-mail-send'></i>
+<input type="email" class="form-control" placeholder="Email*">
+</div>
+</div>
+<div class="col-lg-12">
+<div class="form-group">
+<i class='bx bx-mail-send'></i>
+<textarea id="your-message" rows="10" class="form-control" placeholder="Write message"></textarea>
+</div>
+</div>
+<div class="col-lg-12">
+<button type="submit" class="btn">Submit A Review</button>
+</div>
+</div>
+</form>
+</div>-->
+
+</div>
+</div>
+<div class="col-lg-4">
+<div class="widget-area">
+<div class="information widget-item">
+<h3>Personal Details</h3>
+<ul>
+<li>
+    <img src="assets/img/job-details-icon.png" alt="Details">
+    <h4>Date of Birth:<a onclick="add_dob()"><i class='far fa-edit' style='font-size:18px; margin-left: 5px; color:rgb(255, 65, 65); font-weight: bold;'></i></a></h4>
+    <div id="add_dob"></div>
+    <span id="dob"></span>
+</li>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Age:</h4>
+<span id="age"></span>
+</li>
+<li>
+    <img src="assets/img/job-details-icon.png" alt="Details">
+    <h4>Gender:<a onclick="add_gender()"><i class='far fa-edit' style='font-size:18px; margin-left: 5px; color:rgb(255, 65, 65); font-weight: bold;'></i></a></h4>
+    <div id="add_gender"></div>
+    <span id="gender_detail"></span>
+</li>
+</ul>
+</div>
+<div class="download widget-item">
+<a onclick="printdiv()" href="#">Download CV</a>
+<a class='right' href='contact.html'>Contact Me</a>
+</div>
+<script>
+    function printdiv() {
+      var header_str = '<html><head><title>' + document.title  + '</title></head><body>';
+      var footer_str = '</body></html>';
+      var new_str = document.getElementById("cv").innerHTML;
+      var old_str = document.body.innerHTML;
+      document.body.innerHTML = header_str + new_str + footer_str;
+      window.print();
+      document.body.innerHTML = old_str;
+      return false;
+    }
+</script>
+<div class="owner">
+<div class="information widget-item">
+<ul>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Phone</h4>
+<a id="phoneNumber"></a>
+</li>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4 id="emailId"></h4>
+</li>
+<li>
+<img src="assets/img/job-details-icon.png" alt="Details">
+<h4>Location:- Mega Center, Hadapsar, pune</h4>
+</li>
+</ul>
+</div>
+</div>
+<div class="cmn-link">
+<a href="single-resume.html">
+<i class="flaticon-right-arrow one"></i>
+View Resume
+<i class="flaticon-right-arrow two"></i>
+ </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="footer-area three pt-100 pb-70">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-4">
+<div class="footer-item three">
+<div class="footer-logo">
+<a class='logo' href='index.html'>
+<img src="assets/img/logo-three.png" alt="Logo">
+</a>
+<ul>
+<li>
+<span>Address: </span>Mega Center, Hadapsar, pune
+</li>
+<li>
+<span>Message: </span><a><span>hirelanes@gmail.com</span></a>
+</li>
+<li>
+<span>Phone: </span><a href="tel:+918796775539">87967 75539</a>
+</li>
+<li><span>Open: </span>Mon - Fri / 9:00 AM - 6:00 PM</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Our Services</h3>
+<ul>
+<li>
+<a href='jobs.html' target='_blank'>Accounting</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Teachers</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Customer Service</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Digital Marketing</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Web & Software Dev</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Science & Analytics</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-2">
+<div class="footer-item three">
+<div class="footer-service">
+<h3>Useful Links</h3>
+<ul>
+<li>
+<a href='privacy-policy.html' target='_blank'>Privacy Policy</a>
+</li>
+<li>
+<a href='terms-conditions.html' target='_blank'>Terms & Conditions</a>
+</li>
+<li>
+<a href='jobs.html' target='_blank'>Jobs</a>
+</li>
+<li>
+<a href='contact.html' target='_blank'>Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="footer-item three">
+<div class="footer-newsletter">
+<h3>Newsletter</h3>
+<p>Subscribe Using Email</p>
+<form class="newsletter-form" data-toggle="validator">
+<input type="email" class="form-control" placeholder="Your email*" name="EMAIL" required autocomplete="off">
+<button class="btn" type="submit">
+<i class="flaticon-send"></i>
+ </button>
+<div id="validator-newsletter" class="form-result"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="copyright-area three">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="copyright-item">
+<ul>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-facebook'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-twitter'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-linkedin-square'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-pinterest-alt'></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class='bx bxl-youtube'></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="copyright-item">
+<p>Copyright &copy HireLanes</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+//My Profile Functions
+//edit_profile() C
+//load_data() R
+//save_profile() U
+//delete_profile() D
+    function load_data(){
+    try {
+            aws_config();
+            var s3 = new AWS.S3();
+            var params = {
+                Bucket: "candidates-details",
+                Key: JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    console.log(err, err.stack); // an error occurred
+                }
+                else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    document.getElementById("name").innerHTML = detail_json["first_name"] + " "+ detail_json['middle_name'] +" " + detail_json['surname'];
+                    document.getElementById("phone_number").innerHTML = "<i class='bx bx-phone-call'></i>"+
+                    "<a href='tel:"+ detail_json['number'] +"'>"+ detail_json['number'] +"</a>";
+                    document.getElementById("phoneNumber").innerHTML = detail_json['number'];
+                    document.getElementById("emailId").innerHTML = "Email:- " + JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'];
+            }
+            });
+
+            aws_config();
+            var s3 = new AWS.S3();
+            var params = {
+                Bucket: "job-candidate-details",
+                Key: "my_profile/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+                };
+            s3.getObject(params, function(err, data) {
+                if(err) {
+                    console.log(err, err.stack); // an error occurred
+                }
+                else{
+                    var detail_json   = data.Body.toString('utf-8'); // successful response
+                    detail_json = JSON.parse(detail_json);
+                    document.getElementById("edit_profile").innerHTML = '<p id="my_profile">'+ detail_json['my_profile'] +'</p>';
+                    document.getElementById("delete_profile").innerHTML = '';
+            }
+            });
+
+            load_education()
+            load_classxii()
+            load_classx()
+            load_experience()
+            load_dob_n_gender()
+        }catch(err) {
+            location = "login.html";
+        }
+    }
+
+    function edit_profile(){
+        document.getElementById("edit_profile").innerHTML = '<textarea id="textarea_text" style="width: 100%; height: 3cm; border-radius: 5px;">'+ document.getElementById("my_profile").textContent +'</textarea>'+
+        '<button class="button-24" onclick="save_profile()">Save</button>'+
+        '<h6></h6>'+
+        '<h6 onclick="load_data()" style="text-align: center;">Cancle</h6>';
+        document.getElementById("delete_profile").innerHTML = 'Delete';
+        }
+
+    function save_profile(){
+        var body = {
+            "my_profile": document.getElementById("textarea_text").value
+        }
+        var key = "my_profile/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        put_object(body, key)
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: "my_profile/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				console.log(err, err.stack); // an error occurred
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                document.getElementById("edit_profile").innerHTML = '<p id="my_profile">'+ document.getElementById("textarea_text").value +'</p>';
+                document.getElementById("delete_profile").innerHTML = '';
+        }
+        });
+    }
+
+    function delete_profile(){
+        var body = {
+            "my_profile": ""
+        }
+        key = "my_profile/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress']+".json"
+        put_object(body, key)
+        document.getElementById("edit_profile").innerHTML = '<p id="my_profile">Enter Your Profile Summery</p>';
+        document.getElementById("delete_profile").innerHTML = '';
+    }
+
+//End My Profile Functions
+
+//Education Functions
+//add_education() C
+//load_education R
+//save_education edit_education update_education U
+//delete_education D
+
+    function add_education(){
+        document.getElementById("add_education").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="save_education(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Add Education</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+            '<div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        University/Institute:'+
+        '        </label>'+
+        '        <input id="institute_name" type="text" class="form-control" placeholder="Enter Name of University/Institute"  required>'+
+        '        </div>'+
+        '    </div>'+
+        '    <div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        Education:'+
+        '        </label>'+
+        '         <select id="education_type" required>'+
+        '            <option>Graduation/Diploma</option>'+
+        '            <option>Masters/Post-Graduation</option>'+
+        '            <option>Doctorate/Phd</option>'+
+        '        </select>'+
+        '        </div>'+
+        '    </div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Course:'+
+            '</label>'+
+            '<select id="course" style="padding:5px;" required>'+
+                '<option>B.Tech/B.E</option>'+
+                '<option>B.Com</option>'+
+                '<option>B.Sc</option>'+
+                '<option>B.A</option>'+
+                '<option>Diploma</option>'+
+                '<option>B.Arch</option>'+
+                '<option>B.B.A/ B.M.S</option>'+
+                '<option>B.Des</option>'+
+                '<option>B.Ed</option>'+
+                '<option>B.EI.Ed</option>'+
+                '<option>B.P.Ed</option>'+
+                '<option>B.Pharma</option>'+
+                '<option>B.U.M.S</option>'+
+                '<option>BAMS</option>'+
+                '<option>BCA</option>'+
+                '<option>BDS</option>'+
+                '<option>BFA</option>'+
+                '<option>BHM</option>'+
+                '<option>BHMCT</option>'+
+                '<option>BHMS</option>'+
+                '<option>BVSC</option>'+
+                '<option>LLB</option>'+
+                '<option>MBBS</option>'+
+                '<option>Other Graduate</option>'+
+                '<option>MBA/PGDM</option>'+
+                '<option>M.Tech</option>'+
+                '<option>MS/M.Sc (Science)</option>'+
+                '<option>MCA</option>'+
+                '<option>M.Com</option>'+
+                '<option>PG Diploma</option>'+
+                '<option>M.A</option>'+
+                '<option>CA</option>'+
+                '<option>CS</option>'+
+                '<option>DM</option>'+
+                '<option>ICWA (CMA)</option>'+
+                '<option>Integrated PG</option>'+
+                '<option>LLM</option>'+
+                '<option>M.Arch</option>'+
+                '<option>M.Ch</option>'+
+                '<option>M.Des.</option>'+
+                '<option>M.Ed</option>'+
+                '<option>M.Pharma</option>'+
+                '<option>MCM</option>'+
+                '<option>MDS</option>'+
+                '<option>Medical-MS/MD</option>'+
+                '<option>MFA</option>'+
+                '<option>MVSC</option>'+
+                '<option>Other Post Graduate</option>'+
+                '<option>Ph.D/Doctorate</option>'+
+                '<option>MPHIL</option>'+
+                '<option>Other Doctorate</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Specialization:'+
+            '</label>'+
+            '<input id="specialization" type="text" class="form-control" placeholder="Enter Your Specialization" required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Course Type:'+
+            '</label>'+
+            ' <select id="course_type" required>'+
+                '<option>Full Time</option>'+
+                '<option>Part Time</option>'+
+                '<option>Correspondance/Distance Learning</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+        '    <div class="form-group">'+
+        '    <label>'+
+        '    From:'+
+        '    </label>'+
+        '    <input id="course_start" type="date" class="form-control" placeholder="Course Start" required>'+
+        '    </div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'To:'+
+            '</label>'+
+            '<input id="course_end" type="date" class="form-control" placeholder="Course End" required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Grading System:'+
+            '</label>'+
+            ' <select id="grading_system" required>'+
+                '<option>Scale out of scale 10 Grading System</option>'+
+                '<option>Scale out of scale 4 Grading System</option>'+
+                '<option>% Marks out of 100 Maximum</option>'+
+                '<option>Course Requires a Pass</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Marks/Percentage/CGPA:'+
+            '</label>'+
+            '<input id="grade" type="text" class="form-control" placeholder="Enter Marks/Percentage/CGPA">'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
+        '<button type="submit" class="btn">Save Details</button> '+
+        '<h6></h6>'+
+        '<h6 onclick="cancle_add_education()">Cancle</h6>'+
+        '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>';                                                                                      
+    }
+
+    function load_education(){
+        var key = "education_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                document.getElementById("education_details").innerHTML = "";
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                var index = [];
+
+                // build the index
+                for (var x in detail_json) {
+                index.push(x);
+                }
+                
+
+                for(var i = 0;i<keyCount;i++){
+                    var keyname = "inst_num"  + (i+1);
+                    document.getElementById("education_details").innerHTML +=
+                    '<ul id="institute_name_' + detail_json[index[i]]['inst_num'] + '">'+
+                    '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    detail_json[index[i]]['institute_name']+ '   '+  '<a onclick="edit_education(this)" id="inst'+ detail_json[index[i]]['inst_num'] +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_education(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_education_inst'+ detail_json[index[i]]['inst_num'] +'"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="education_type_' + detail_json[index[i]]['inst_num'] +'">'+ detail_json[index[i]]['education_type'] + '</h4>'+
+                    '<h4 id="degree_'+ detail_json[index[i]]['inst_num'] +'">'+ detail_json[index[i]]['course'] + ' '+ detail_json[index[i]]['specialization'] + ' ' +'('+ detail_json[index[i]]['course_start'] +'-'+ detail_json[index[i]]['course_end'] +')</h4>'+
+                    '<p id="grade_'+ detail_json[index[i]]['inst_num'] +'">'+ detail_json[index[i]]['grade'] + ' ' + detail_json[index[i]]['grading_system'] +'</p>';
+                
+                }
+                }
+        });
+    }
+
+    function cancle_add_education(){
+        document.getElementById("add_education").innerHTML = "";
+    }
+
+    var number_of_institute = 0;
+    function save_education(){
+        number_of_institute++;
+        var institute_name = document.getElementById("institute_name").value;
+        var education_type = document.getElementById("education_type").value;
+        var course = document.getElementById("course").value;
+        var specialization = document.getElementById("specialization").value;
+        var course_type = document.getElementById("course_type").value;
+        var course_start = document.getElementById("course_start").value;
+        var course_end = document.getElementById("course_end").value;
+        var grading_system = document.getElementById("grading_system").value;
+        var grade = document.getElementById("grade").value;
+
+        var body = {
+            inst_num1 : {
+                    'inst_num': number_of_institute,
+                    'institute_name' : document.getElementById("institute_name").value,
+                    'education_type' : document.getElementById("education_type").value,
+                    'course' : document.getElementById("course").value,
+                    'specialization' : document.getElementById("specialization").value,
+                    'course_type' : document.getElementById("course_type").value,
+                    'course_start' : document.getElementById("course_start").value,
+                    'course_end' : document.getElementById("course_end").value,
+                    'grading_system' : document.getElementById("grading_system").value,
+                    'grade' : document.getElementById("grade").value
+            }
+        }
+        var key = "education_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                put_object(body, key)
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                detail_json["inst_num"+ (keyCount+1)] = {
+                    'inst_num': (keyCount+1),
+                    'institute_name' : document.getElementById("institute_name").value,
+                    'education_type' : document.getElementById("education_type").value,
+                    'course' : document.getElementById("course").value,
+                    'specialization' : document.getElementById("specialization").value,
+                    'course_type' : document.getElementById("course_type").value,
+                    'course_start' : document.getElementById("course_start").value,
+                    'course_end' : document.getElementById("course_end").value,
+                    'grading_system' : document.getElementById("grading_system").value,
+                    'grade' : document.getElementById("grade").value
+            };
+
+                put_object(detail_json, key)
+                document.getElementById("education_details").innerHTML +=
+                    '<ul id="institute_name_' + number_of_institute + '">'+
+                    '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    institute_name+ '   '+  '<a onclick="edit_education(this)" id="inst'+ number_of_institute +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_education(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_education_inst'+ number_of_institute +'"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="education_type_' + number_of_institute +'">'+ education_type + '</h4>'+
+                    '<h4 id="degree_'+ number_of_institute +'">'+ course + ' '+ specialization + ' ' +'('+ course_start +'-'+ course_end +')</h4>'+
+                    '<p id="grade_'+ number_of_institute +'">'+ grade + ' ' + grading_system +'</p>';
+                    document.getElementById("add_education").innerHTML = "";
+            }
+        });
+    }
+
+    function edit_education(obj){
+        var id = obj.id;
+        var id_num = id.charAt(id.length-1)
+        sessionStorage.setItem("id_num", id_num)
+        var name_of_inst =   document.getElementById("institute_name_"+id_num).textContent
+        name_of_inst = name_of_inst.replace("Delete", "");
+        document.getElementById("delete_education_"+ id).innerHTML = "Delete"
+        var key = "education_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                //put_object(body, key)
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                document.getElementById("edit_education").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="update_education(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Edit Education Details</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+        '<div class="col-lg-12">'+
+                    '<div class="form-group">'+
+                    '<label>'+
+                    'University/Institute:'+
+                    '</label>'+
+                    '<input id="institute_name" type="text" class="form-control" placeholder="Enter Name of University/Institute" value="'+ detail_json['inst_num'+ id_num]['institute_name'] +'"  required>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-lg-12">'+
+                    '<div class="form-group">'+
+                    '<label>'+
+                    'Education:'+
+                    '</label>'+
+                    '<select id="education_type" required>'+
+                        '<option selected hidden>'+ detail_json['inst_num'+ id_num]['education_type']+'</option>'+
+                        '<option>Graduation/Diploma</option>'+
+                        '<option>Masters/Post-Graduation</option>'+
+                        '<option>Doctorate/Phd</option>'+
+                    '</select>'+
+                '</div>'+
+            '</div>'+
+            '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+                '<label>'+
+                'Course:'+
+                '</label>'+
+                '<select id="course" style="padding:5px;" required>'+
+                    '<option selected hidden>'+ detail_json['inst_num'+ id_num]['course']+'</option>'+
+                    '<option>B.Tech/B.E</option>'+
+                    '<option>B.Com</option>'+
+                    '<option>B.Sc</option>'+
+                    '<option>B.A</option>'+
+                    '<option>Diploma</option>'+
+                    '<option>B.Arch</option>'+
+                    '<option>B.B.A/ B.M.S</option>'+
+                    '<option>B.Des</option>'+
+                    '<option>B.Ed</option>'+
+                    '<option>B.EI.Ed</option>'+
+                    '<option>B.P.Ed</option>'+
+                    '<option>B.Pharma</option>'+
+                    '<option>B.U.M.S</option>'+
+                    '<option>BAMS</option>'+
+                    '<option>BCA</option>'+
+                    '<option>BDS</option>'+
+                    '<option>BFA</option>'+
+                    '<option>BHM</option>'+
+                    '<option>BHMCT</option>'+
+                    '<option>BHMS</option>'+
+                    '<option>BVSC</option>'+
+                    '<option>LLB</option>'+
+                    '<option>MBBS</option>'+
+                    '<option>Other Graduate</option>'+
+                    '<option>MBA/PGDM</option>'+
+                    '<option>M.Tech</option>'+
+                    '<option>MS/M.Sc (Science)</option>'+
+                    '<option>MCA</option>'+
+                    '<option>M.Com</option>'+
+                    '<option>PG Diploma</option>'+
+                    '<option>M.A</option>'+
+                    '<option>CA</option>'+
+                    '<option>CS</option>'+
+                    '<option>DM</option>'+
+                    '<option>ICWA (CMA)</option>'+
+                    '<option>Integrated PG</option>'+
+                    '<option>LLM</option>'+
+                    '<option>M.Arch</option>'+
+                    '<option>M.Ch</option>'+
+                    '<option>M.Des.</option>'+
+                    '<option>M.Ed</option>'+
+                    '<option>M.Pharma</option>'+
+                    '<option>MCM</option>'+
+                    '<option>MDS</option>'+
+                    '<option>Medical-MS/MD</option>'+
+                    '<option>MFA</option>'+
+                    '<option>MVSC</option>'+
+                    '<option>Other Post Graduate</option>'+
+                    '<option>Ph.D/Doctorate</option>'+
+                    '<option>MPHIL</option>'+
+                    '<option>Other Doctorate</option>'+
+                '</select>'+
+                '</div>'+
+            '</div>'+
+            '<div class="col-lg-6">'+
+                '<div class="form-group">'+
+                '<label>'+
+                'Specialization:'+
+                '</label>'+
+                '<input id="specialization" type="text" class="form-control" placeholder="Enter Your Specialization" value="'+ detail_json['inst_num'+ id_num]['specialization'] +'" required>'+
+                '</div>'+
+            '</div>'+
+            '<div class="col-lg-6">'+
+                '<div class="form-group">'+
+                '<label>'+
+                'Course Type:'+
+                '</label>'+
+                '<select id="course_type" required>'+
+                '<option selected hidden>'+ detail_json['inst_num'+ id_num]['course_type']+'</option>'+
+                '<option>Full Time</option>'+
+                '<option>Part Time</option>'+
+                '<option>Correspondance/Distance Learning</option>'+
+                '</select>'+
+            '</div>'+
+            '</div>'+
+            '<div class="col-lg-6">'+
+                '<div class="form-group">'+
+                '<label>'+
+                'From:'+
+                '</label>'+
+                '<input id="course_start" type="date" class="form-control" placeholder="Course Start" value="'+ detail_json['inst_num'+ id_num]['course_start'] + '" required>'+
+                '</div>'+
+            '</div>'+
+'            <div class="col-lg-6">'+
+'                <div class="form-group">'+
+'                <label>'+
+'                To:'+
+'                </label>'+
+'                <input id="course_end" type="date" class="form-control" placeholder="Course End" value="' + detail_json['inst_num'+ id_num]['course_end'] +'" required>'+
+'                </div>'+
+'            </div>'+
+'            <div class="col-lg-6">'+
+'                <div class="form-group">'+
+'                <label>'+
+'                Grading System:'+
+'                </label>'+
+'                 <select id="grading_system" required>'+
+    '<option selected hidden>'+ detail_json['inst_num'+ id_num]['grading_system']+'</option>'+
+'                    <option>Scale out of scale 10 Grading System</option>'+
+'                    <option>Scale out of scale 4 Grading System</option>'+
+'                    <option>% Marks out of 100 Maximum</option>'+
+'                    <option>Course Requires a Pass</option>'+
+'                </select>'+
+'                </div>'+
+'            </div>'+
+'            <div class="col-lg-6">'+
+'                <div class="form-group">'+
+'                <label>'+
+'                Marks/Percentage/CGPA:'+
+'                </label>'+
+'                <input id="grade" type="text" class="form-control" placeholder="Enter Marks/Percentage/CGPA" value="'+ detail_json['inst_num'+ id_num]['grade'] +'" required>'+
+'                </div>'+
+'            </div>'+
+'            </div>'+
+'            <button type="submit" class="btn">Save Details</button> '+
+            '<h6></h6>'+
+            '<h6 id="' + id +'" onclick="cancle_edit_education(this)">Cancle</h6>'+
+            '</div>'+
+            '</form>'+
+            '</div>'+
+            '</div>';  
+            //put_object(detail_json, key)   
+        }
+        });
+
+    }
+
+    function update_education(){
+        var key = "education_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                //put_object(body, key)
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                document.getElementById("education_details").innerHTML +=
+                    '<ul id="institute_name_' + sessionStorage.getItem("id_num") + '">'+
+                    '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    document.getElementById("institute_name").value+ '   '+  '<a onclick="edit_education(this)" id="inst'+ sessionStorage.getItem("id_num") +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_education(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_education_inst'+ sessionStorage.getItem("id_num") +'"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="education_type_' + sessionStorage.getItem("id_num") +'">'+ document.getElementById("education_type").value + '</h4>'+
+                    '<h4 id="degree_'+ sessionStorage.getItem("id_num") +'">'+ document.getElementById("course").value + ' '+ document.getElementById("specialization").value + ' ' +'('+ document.getElementById("course_start").value +'-'+ document.getElementById("course_end").value +')</h4>'+
+                    '<p id="grade_'+ sessionStorage.getItem("id_num") +'">'+ document.getElementById("grade").value + ' ' + document.getElementById("grading_system").value +'</p>';
+        
+                var data =  {
+                    'inst_num': sessionStorage.getItem("id_num"),
+                    'institute_name' : document.getElementById("institute_name").value,
+                    'education_type' : document.getElementById("education_type").value,
+                    'course' : document.getElementById("course").value,
+                    'specialization' : document.getElementById("specialization").value,
+                    'course_type' : document.getElementById("course_type").value,
+                    'course_start' : document.getElementById("course_start").value,
+                    'course_end' : document.getElementById("course_end").value,
+                    'grading_system' : document.getElementById("grading_system").value,
+                    'grade' : document.getElementById("grade").value
+            };
+                detail_json['inst_num'+ sessionStorage.getItem("id_num")] = data;
+                put_object(detail_json, key);
+                //document.getElementById("delete_education_"+sessionStorage.getItem("id_num")).innerHTML = "";
+                document.getElementById("institute_name_"+ sessionStorage.getItem("id_num")).innerHTML = ""
+                document.getElementById("education_type_"+ sessionStorage.getItem("id_num")).innerHTML = ""
+                document.getElementById("degree_"+ sessionStorage.getItem("id_num")).innerHTML = ""
+                document.getElementById("grade_"+ sessionStorage.getItem("id_num")).innerHTML = ""
+                document.getElementById("edit_education").innerHTML = "";
+          }
+    });
+}
+
+    function cancle_edit_education(obj){
+        var id = obj.id;
+        document.getElementById("edit_education").innerHTML = "";
+        document.getElementById("delete_education_"+id).innerHTML = "";
+
+    }
+
+    function delete_education(obj){
+        var id = obj.id;
+        id = id.charAt(id.length - 1)
+        var id = obj.id;
+        id = id.charAt(id.length - 1)
+        var key = "education_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                delete detail_json["inst_num"+id];
+                put_object(detail_json, key)
+                document.getElementById("institute_name_"+ id).innerHTML = ""
+                document.getElementById("education_type_"+ id).innerHTML = ""
+                document.getElementById("degree_"+ id).innerHTML = ""
+                document.getElementById("grade_"+ id).innerHTML = ""
+                document.getElementById("edit_education").innerHTML = "";
+            }
+        });
+    }
+
+    //Class XII
+    function add_classxii(){
+        document.getElementById("add_classxii").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="save_classxii(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Add Class XII Details</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+            '<div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        University/Institute:'+
+        '        </label>'+
+        '        <input id="classxii_institute_name" type="text" class="form-control" placeholder="Enter Name of University/Institute"  required>'+
+        '        </div>'+
+        '    </div>'+
+        '    <div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        Board:'+
+        '        </label>'+
+        '         <select id="classxii_board" required>'+
+                    '<option>CBSC</option>'+
+                    '<option>CISCE(ICSE/ISE)</option>'+
+                    '<option>Diploma</option>'+
+                    '<option>National Open School</option>'+
+                    '<option>IB (International Baccalaureate)</option>'+
+                    '<option>State Board</option>'+
+                  '</select>'+
+        '        </div>'+
+        '    </div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Passing Out Year:'+
+            '</label>'+
+            '<select id="classxii_passoutyear" style="padding:5px;" required>'+
+                '<option>2024</option>'+
+                '<option>2023</option>'+
+                '<option>2022</option>'+
+                '<option>2021</option>'+
+                '<option>2020</option>'+
+                '<option>2019</option>'+
+                '<option>2018</option>'+
+                '<option>2017</option>'+
+                '<option>2016</option>'+
+                '<option>2015</option>'+
+                '<option>2014</option>'+
+                '<option>2013</option>'+
+                '<option>2014</option>'+
+                '<option>2013</option>'+
+                '<option>2012</option>'+
+                '<option>2011</option>'+
+                '<option>2010</option>'+
+                '<option>2009</option>'+
+                '<option>2008</option>'+
+                '<option>2007</option>'+
+                '<option>2006</option>'+
+                '<option>2005</option>'+
+                '<option>2004</option>'+
+                '<option>2003</option>'+
+                '<option>2002</option>'+
+                '<option>2001</option>'+
+                '<option>2000</option>'+
+                '<option>1999</option>'+
+                '<option>1998</option>'+
+                '<option>1997</option>'+
+                '<option>1996</option>'+
+                '<option>1995</option>'+
+                '<option>1994</option>'+
+                '<option>1993</option>'+
+                '<option>1992</option>'+
+                '<option>1991</option>'+
+                '<option>1990</option>'+
+                '<option>Other</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Medium:'+
+            '</label>'+
+            ' <select id="classxii_medium" required>'+
+                '<option>Assamese / Asomiya</option>'+
+                '<option>Bengali / Bangla</option>'+
+                '<option>English</option>'+
+                '<option>Gujarati</option>'+
+                '<option>Hindi</option>'+
+                '<option>Kannada</option>'+
+                '<option>Kashmiri</option>'+
+                '<option>Konkani</option>'+
+                '<option>Malayalam</option>'+
+                '<option>Manipuri</option>'+
+                '<option>Marathi</option>'+
+                '<option>Oriya</option>'+
+                '<option>Punjabi</option>'+
+                '<option>Sanskrit</option>'+
+                '<option>Tamil</option>'+
+                '<option>Telugu</option>'+
+                '<option>Urdu</option>'+
+                '<option>Other</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Percentage:'+
+            '</label>'+
+            '<input id="classxii_grade" type="text" class="form-control" placeholder="Enter Percentage">'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
+        '<button type="submit" class="btn">Save Details</button> '+
+        '<h6></h6>'+
+        '<h6 onclick="cancle_add_classxii()">Cancle</h6>'+
+        '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>';                                     
+
+    }
+
+    function load_classxii(){
+        var key = "classxii/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                document.getElementById("classxii_details").innerHTML =
+                    '<ul id="classxii_institute_name' + '">'+
+                    '<li>'+
+                    detail_json['classxii']['classxii_institute_name'] + '   '+  '<a onclick="edit_classxii()"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_classxii()" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_classxii"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="classxii_board">'+ detail_json['classxii']['classxii_board'] + '</h4>'+
+                    '<h4 id="classxii_passoutyear">'+ detail_json['classxii']['classxii_passoutyear'] +'</h4>'+
+                    '<p id="classxii_grade">'+ detail_json['classxii']['classxii_grade'] + '</p>';
+            }
+        });
+
+    }
+
+    function save_classxii(){
+        var classxii_institute_name = document.getElementById("classxii_institute_name").value;
+        var classxii_board = document.getElementById("classxii_board").value;
+        var classxii_passoutyear = document.getElementById("classxii_passoutyear").value;
+        var classxii_medium = document.getElementById("classxii_medium").value;
+        var classxii_grade = document.getElementById("classxii_grade").value + '%';
+
+        var body = {
+            "classxii" : {
+                    'classxii_institute_name': classxii_institute_name,
+                    'classxii_board' : classxii_board,
+                    'classxii_passoutyear' : classxii_passoutyear,
+                    'classxii_medium' : classxii_medium,
+                    'classxii_grade' : classxii_grade
+            }
+        }
+        var key = "classxii/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        put_object(body, key)
+        document.getElementById("classxii_details").innerHTML =
+                    '<ul id="classxii_institute_name' + '">'+
+                    '<li>'+
+                    classxii_institute_name + '   '+  '<a onclick="edit_classxii()"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_classxii()" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_classxii"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="classxii_board">'+ classxii_board + '</h4>'+
+                    '<h4 id="classxii_passoutyear">'+ classxii_passoutyear +'</h4>'+
+                    '<p id="classxii_grade">'+ classxii_grade + '</p>';
+                    document.getElementById("add_classxii").innerHTML = ""
+
+    }
+
+    function edit_classxii(){
+    document.getElementById("delete_classxii").innerHTML = "Delete"
+    document.getElementById("add_classxii").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="save_classxii(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Edit Class XII Details</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+            '<div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        University/Institute:'+
+        '        </label>'+
+        '        <input id="classxii_institute_name" type="text" class="form-control" placeholder="Enter Name of University/Institute" value="'+ document.getElementById('classxii_institute_name').textContent +'"  required>'+
+        '        </div>'+
+        '    </div>'+
+        '    <div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        Board:'+
+        '        </label>'+
+        '         <select id="classxii_board" required>'+
+            '<option selected hidden>'+ document.getElementById('classxii_board').textContent +'</option>'+
+                    '<option>CBSC</option>'+
+                    '<option>CISCE(ICSE/ISE)</option>'+
+                    '<option>Diploma</option>'+
+                    '<option>National Open School</option>'+
+                    '<option>IB (International Baccalaureate)</option>'+
+                    '<option>State Board</option>'+
+                  '</select>'+
+        '        </div>'+
+        '    </div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Passing Out Year:'+
+            '</label>'+
+            '<select id="classxii_passoutyear" style="padding:5px;" required>'+
+                '<option selected hidden>'+ document.getElementById('classxii_passoutyear').textContent +'</option>'+
+                '<option>2024</option>'+
+                '<option>2023</option>'+
+                '<option>2022</option>'+
+                '<option>2021</option>'+
+                '<option>2020</option>'+
+                '<option>2019</option>'+
+                '<option>2018</option>'+
+                '<option>2017</option>'+
+                '<option>2016</option>'+
+                '<option>2015</option>'+
+                '<option>2014</option>'+
+                '<option>2013</option>'+
+                '<option>2014</option>'+
+                '<option>2013</option>'+
+                '<option>2012</option>'+
+                '<option>2011</option>'+
+                '<option>2010</option>'+
+                '<option>2009</option>'+
+                '<option>2008</option>'+
+                '<option>2007</option>'+
+                '<option>2006</option>'+
+                '<option>2005</option>'+
+                '<option>2004</option>'+
+                '<option>2003</option>'+
+                '<option>2002</option>'+
+                '<option>2001</option>'+
+                '<option>2000</option>'+
+                '<option>1999</option>'+
+                '<option>1998</option>'+
+                '<option>1997</option>'+
+                '<option>1996</option>'+
+                '<option>1995</option>'+
+                '<option>1994</option>'+
+                '<option>1993</option>'+
+                '<option>1992</option>'+
+                '<option>1991</option>'+
+                '<option>1990</option>'+
+                '<option>Other</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Medium:'+
+            '</label>'+
+            ' <select id="classxii_medium" required>'+
+                '<option selected hidden>Select Medium</option>'+
+                '<option>Assamese / Asomiya</option>'+
+                '<option>Bengali / Bangla</option>'+
+                '<option>English</option>'+
+                '<option>Gujarati</option>'+
+                '<option>Hindi</option>'+
+                '<option>Kannada</option>'+
+                '<option>Kashmiri</option>'+
+                '<option>Konkani</option>'+
+                '<option>Malayalam</option>'+
+                '<option>Manipuri</option>'+
+                '<option>Marathi</option>'+
+                '<option>Oriya</option>'+
+                '<option>Punjabi</option>'+
+                '<option>Sanskrit</option>'+
+                '<option>Tamil</option>'+
+                '<option>Telugu</option>'+
+                '<option>Urdu</option>'+
+                '<option>Other</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Percentage:'+
+            '</label>'+
+            '<input id="classxii_grade" type="text" class="form-control" value="'+ document.getElementById('classxii_grade').textContent +'" placeholder="Enter Percentage">'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
+        '<button type="submit" class="btn">Save Details</button> '+
+        '<h6></h6>'+
+        '<h6 onclick="cancle_add_classxii()">Cancle</h6>'+
+        '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>';                                     
+    }
+
+    function cancle_add_classxii(){
+        document.getElementById("add_classxii").innerHTML = ""
+    }
+
+    function delete_classxii(){
+        var key = "classxii/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        delete_object(key)
+        document.getElementById("classxii_details").innerHTML = ""
+        document.getElementById("add_classxii").innerHTML = ""
+        document.getElementById("delete_classxii").innerHTML = ""
+
+    }
+
+    //Class XII
+    //class X
+function add_classx(){
+    document.getElementById("add_classx").innerHTML = 
+    '<div class="post-job-area ptb-100">'+
+    '<div class="container">'+
+    '<form onSubmit="save_classx(); return false;">'+
+    '<div class="post-item">'+
+    '<div class="section-title">'+
+    '<h2>Add Class X Details</h2>'+
+    '<p>_________________________</p>'+
+    '</div>'+
+    '<div class="row">'+
+        '<div class="col-lg-12">'+
+    '        <div class="form-group">'+
+    '        <label>'+
+    '        School/Institute Name:'+
+    '        </label>'+
+    '        <input id="classx_institute_name" type="text" class="form-control" placeholder="Enter Name of School/Institute"  required>'+
+    '        </div>'+
+    '    </div>'+
+    '    <div class="col-lg-12">'+
+    '        <div class="form-group">'+
+    '        <label>'+
+    '        Board:'+
+    '        </label>'+
+    '         <select id="classx_board" required>'+
+                '<option>CBSC</option>'+
+                '<option>CISCE(ICSE/ISE)</option>'+
+                '<option>Diploma</option>'+
+                '<option>National Open School</option>'+
+                '<option>IB (International Baccalaureate)</option>'+
+                '<option>State Board</option>'+
+            '</select>'+
+    '        </div>'+
+    '    </div>'+
+    '<div class="col-lg-12">'+
+        '<div class="form-group">'+
+        '<label>'+
+        'Passing Out Year:'+
+        '</label>'+
+        '<select id="classx_passoutyear" style="padding:5px;" required>'+
+            '<option>2024</option>'+
+            '<option>2023</option>'+
+            '<option>2022</option>'+
+            '<option>2021</option>'+
+            '<option>2020</option>'+
+            '<option>2019</option>'+
+            '<option>2018</option>'+
+            '<option>2017</option>'+
+            '<option>2016</option>'+
+            '<option>2015</option>'+
+            '<option>2014</option>'+
+            '<option>2013</option>'+
+            '<option>2014</option>'+
+            '<option>2013</option>'+
+            '<option>2012</option>'+
+            '<option>2011</option>'+
+            '<option>2010</option>'+
+            '<option>2009</option>'+
+            '<option>2008</option>'+
+            '<option>2007</option>'+
+            '<option>2006</option>'+
+            '<option>2005</option>'+
+            '<option>2004</option>'+
+            '<option>2003</option>'+
+            '<option>2002</option>'+
+            '<option>2001</option>'+
+            '<option>2000</option>'+
+            '<option>1999</option>'+
+            '<option>1998</option>'+
+            '<option>1997</option>'+
+            '<option>1996</option>'+
+            '<option>1995</option>'+
+            '<option>1994</option>'+
+            '<option>1993</option>'+
+            '<option>1992</option>'+
+            '<option>1991</option>'+
+            '<option>1990</option>'+
+            '<option>Other</option>'+
+        '</select>'+
+        '</div>'+
+    '</div>'+
+    '<div class="col-lg-6">'+
+        '<div class="form-group">'+
+        '<label>'+
+        'Medium:'+
+        '</label>'+
+        ' <select id="classx_medium" required>'+
+            '<option>Assamese / Asomiya</option>'+
+            '<option>Bengali / Bangla</option>'+
+            '<option>English</option>'+
+            '<option>Semi-English</option>'+
+            '<option>Gujarati</option>'+
+            '<option>Hindi</option>'+
+            '<option>Kannada</option>'+
+            '<option>Kashmiri</option>'+
+            '<option>Konkani</option>'+
+            '<option>Malayalam</option>'+
+            '<option>Manipuri</option>'+
+            '<option>Marathi</option>'+
+            '<option>Oriya</option>'+
+            '<option>Punjabi</option>'+
+            '<option>Sanskrit</option>'+
+            '<option>Tamil</option>'+
+            '<option>Telugu</option>'+
+            '<option>Urdu</option>'+
+            '<option>Other</option>'+
+        '</select>'+
+        '</div>'+
+    '</div>'+
+    '<div class="col-lg-6">'+
+        '<div class="form-group">'+
+        '<label>'+
+        'Percentage:'+
+        '</label>'+
+        '<input id="classx_grade" type="text" class="form-control" placeholder="Enter Percentage">'+
+        '</div>'+
+    '</div>'+
+    '</div>'+
+    '<button type="submit" class="btn">Save Details</button> '+
+    '<h6></h6>'+
+    '<h6 onclick="cancle_add_classx()">Cancle</h6>'+
+    '</div>'+
+    '</form>'+
+    '</div>'+
+    '</div>';                                     
+
+    }
+
+    function load_classx(){
+    var key = "classx/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+    try{
+        aws_config()
+    }catch(err) {
+        location = "network_error.html";
+    }
+    var s3 = new AWS.S3();
+    var params = {
+        Bucket: "job-candidate-details",
+        Key: key
+        };
+    s3.getObject(params, function(err, data) {
+        if(err) {
+            //console.log(err, err.stack); // an error occurred
+
+        }
+        else{
+            var detail_json   = data.Body.toString('utf-8'); // successful response
+            detail_json = JSON.parse(detail_json);
+            document.getElementById("classx_details").innerHTML =
+                '<ul id="classx_institute_name' + '">'+
+                '<li>'+
+                detail_json['classx']['classx_institute_name'] + '   '+  '<a onclick="edit_classx()"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_classx()" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_classx"></a>'  +
+                '</li>'+
+                '</ul>'+
+                '<h4 id="classx_board">'+ detail_json['classx']['classx_board'] + '</h4>'+
+                '<h4 id="classx_passoutyear">'+ detail_json['classx']['classx_passoutyear'] +'</h4>'+
+                '<p id="classx_grade">'+ detail_json['classx']['classx_grade'] + '</p>';
+        }
+    });
+
+    }
+
+    function save_classx(){
+    var classx_institute_name = document.getElementById("classx_institute_name").value;
+    var classx_board = document.getElementById("classx_board").value;
+    var classx_passoutyear = document.getElementById("classx_passoutyear").value;
+    var classx_medium = document.getElementById("classx_medium").value;
+    var classx_grade = document.getElementById("classx_grade").value + '%';
+
+    var body = {
+        "classx" : {
+                'classx_institute_name': classx_institute_name,
+                'classx_board' : classx_board,
+                'classx_passoutyear' : classx_passoutyear,
+                'classx_medium' : classx_medium,
+                'classx_grade' : classx_grade
+        }
+    }
+    var key = "classx/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+    put_object(body, key)
+    document.getElementById("classx_details").innerHTML =
+                '<ul id="classx_institute_name' + '">'+
+                '<li>'+
+                classx_institute_name + '   '+  '<a onclick="edit_classx()"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_education()" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_classx"></a>'  +
+                '</li>'+
+                '</ul>'+
+                '<h4 id="classx_board">'+ classx_board + '</h4>'+
+                '<h4 id="classx_passoutyear">'+ classx_passoutyear +'</h4>'+
+                '<p id="classx_grade">'+ classx_grade + '</p>';
+                document.getElementById("add_classx").innerHTML = ""
+
+    }
+
+    function edit_classx(){
+    document.getElementById("delete_classx").innerHTML = "Delete"
+    document.getElementById("add_classx").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="save_classx(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Edit Class X Details</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+            '<div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        University/Institute:'+
+        '        </label>'+
+        '        <input id="classx_institute_name" type="text" class="form-control" placeholder="Enter Name of University/Institute" value="'+ document.getElementById('classx_institute_name').textContent +'"  required>'+
+        '        </div>'+
+        '    </div>'+
+        '    <div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        Board:'+
+        '        </label>'+
+        '         <select id="classx_board" required>'+
+            '<option selected hidden>'+ document.getElementById('classx_board').textContent +'</option>'+
+                    '<option>CBSC</option>'+
+                    '<option>CISCE(ICSE/ISE)</option>'+
+                    '<option>Diploma</option>'+
+                    '<option>National Open School</option>'+
+                    '<option>IB (International Baccalaureate)</option>'+
+                    '<option>State Board</option>'+
+                  '</select>'+
+        '        </div>'+
+        '    </div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Passing Out Year:'+
+            '</label>'+
+            '<select id="classx_passoutyear" style="padding:5px;" required>'+
+                '<option selected hidden>'+ document.getElementById('classx_passoutyear').textContent +'</option>'+
+                '<option>2024</option>'+
+                '<option>2023</option>'+
+                '<option>2022</option>'+
+                '<option>2021</option>'+
+                '<option>2020</option>'+
+                '<option>2019</option>'+
+                '<option>2018</option>'+
+                '<option>2017</option>'+
+                '<option>2016</option>'+
+                '<option>2015</option>'+
+                '<option>2014</option>'+
+                '<option>2013</option>'+
+                '<option>2014</option>'+
+                '<option>2013</option>'+
+                '<option>2012</option>'+
+                '<option>2011</option>'+
+                '<option>2010</option>'+
+                '<option>2009</option>'+
+                '<option>2008</option>'+
+                '<option>2007</option>'+
+                '<option>2006</option>'+
+                '<option>2005</option>'+
+                '<option>2004</option>'+
+                '<option>2003</option>'+
+                '<option>2002</option>'+
+                '<option>2001</option>'+
+                '<option>2000</option>'+
+                '<option>1999</option>'+
+                '<option>1998</option>'+
+                '<option>1997</option>'+
+                '<option>1996</option>'+
+                '<option>1995</option>'+
+                '<option>1994</option>'+
+                '<option>1993</option>'+
+                '<option>1992</option>'+
+                '<option>1991</option>'+
+                '<option>1990</option>'+
+                '<option>Other</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Medium:'+
+            '</label>'+
+            ' <select id="classx_medium" required>'+
+                '<option selected hidden>Select Medium</option>'+
+                '<option>Assamese / Asomiya</option>'+
+                '<option>Bengali / Bangla</option>'+
+                '<option>English</option>'+
+                '<option>Gujarati</option>'+
+                '<option>Hindi</option>'+
+                '<option>Kannada</option>'+
+                '<option>Kashmiri</option>'+
+                '<option>Konkani</option>'+
+                '<option>Malayalam</option>'+
+                '<option>Manipuri</option>'+
+                '<option>Marathi</option>'+
+                '<option>Oriya</option>'+
+                '<option>Punjabi</option>'+
+                '<option>Sanskrit</option>'+
+                '<option>Tamil</option>'+
+                '<option>Telugu</option>'+
+                '<option>Urdu</option>'+
+                '<option>Other</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Percentage:'+
+            '</label>'+
+            '<input id="classx_grade" type="text" class="form-control" value="'+ document.getElementById('classx_grade').textContent +'" placeholder="Enter Percentage">'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
+        '<button type="submit" class="btn">Save Details</button> '+
+        '<h6></h6>'+
+        '<h6 onclick="cancle_add_classx()">Cancle</h6>'+
+        '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>';                                     
+    }
+
+    function cancle_add_classx(){
+    document.getElementById("add_classx").innerHTML = ""
+    }
+
+    function delete_classx(){
+        var key = "classx/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        delete_object(key)
+        document.getElementById("classx_details").innerHTML = ""
+        document.getElementById("add_classx").innerHTML = ""
+        document.getElementById("delete_classx").innerHTML = ""
+    }
+    //class X
+    //education details
+    //Experience Details
+    //Education Functions
+    //add_education() C
+    //load_education R
+    //save_education edit_education update_education U
+    //delete_education D
+
+function add_experience(){
+        document.getElementById("add_experience").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="save_experience(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Add Experience</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+            '<div class="col-lg-12">'+
+        '        <div class="form-group">'+
+        '        <label>'+
+        '        Company Name:'+
+        '        </label>'+
+        '        <input id="company_name" type="text" class="form-control" placeholder="Enter Name of Company"  required>'+
+        '        </div>'+
+        '    </div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Designation:'+
+            '</label>'+
+            '<input id="designation" type="text" class="form-control" placeholder="Enter Your Designation" required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Employment Type:'+
+            '</label>'+
+            ' <select id="employment_type" required>'+
+                '<option>Full Time</option>'+
+                '<option>Part Time</option>'+
+                '<option>Internship</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+        '    <div class="form-group">'+
+        '    <label>'+
+        '    From:'+
+        '    </label>'+
+        '    <input id="employment_start" type="date" class="form-control" placeholder="Employment Start" required>'+
+        '    </div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'To:'+
+            '</label>'+
+            '<input id="employment_end" type="date" class="form-control" placeholder="Employment End" required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Current Salary:'+
+            '</label>'+
+            '<input id="current_salary" type="text" class="form-control" placeholder="Enter Current Salary">'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Notice Period:'+
+            '</label>'+
+            ' <select id="notice_period" required>'+
+                '<option>15 Days or less</option>'+
+                '<option>1 Month</option>'+
+                '<option>2 Month</option>'+
+                '<option>More than 3 Months</option>'+
+                '<option>Serving Notice Period</option>'+
+                '<option>Not Applicable</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Skills Used:'+
+            '</label>'+
+            '<input id="skills_used" type="text" class="form-control" placeholder="Enter Skills Used">'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Job Profile:'+
+            '</label>'+
+            '<textarea style="height: 3cm" id="job_profile" type="text" class="form-control" placeholder="Enter Job Profile Details"></textarea>'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
+        '<button type="submit" class="btn">Save Details</button> '+
+        '<h6></h6>'+
+        '<h6 onclick="cancle_add_experience()">Cancle</h6>'+
+        '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>';                                                                                      
+    }
+
+    function load_experience(){
+        var key = "experience_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                document.getElementById("experience_details").innerHTML = "";
+                document.getElementById("role").innerHTML = '<i class="bx bx-box"></i>' + 'Fresher'
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                var index = [];
+                // build the index
+                for (var x in detail_json) {
+                index.push(x);
+                }
+
+                for(var i = 0;i<keyCount;i++){
+                    var keyname = "experience_num"  + (i+1);
+
+                    document.getElementById("experience_details").innerHTML +=
+                    '<ul id="experience_num' + detail_json[index[i]]['experience_num'] + '">'+
+                    '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    detail_json[index[i]]['company_name']+ '   '+  '<a onclick="edit_experience(this)" id="experience'+ detail_json[index[i]]['experience_num'] +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_experience(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_experience'+ detail_json[index[i]]['experience_num'] +'"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="designation' + detail_json[index[i]]['experience_num'] +'">'+ detail_json[index[i]]['designation'] + '</h4>'+
+                    '<h4 id="employment_details_'+ detail_json[index[i]]['experience_num'] +'">' + 'Experience: ' +' '+ getMonthDifference(new Date(detail_json[index[i]]['employment_start']), new Date(detail_json[index[i]]['employment_end'])) +' Years '+ detail_json[index[i]]['employment_type'] +'</h4>'+
+                    '<p id="current_salary'+ detail_json[index[i]]['experience_num'] +'">Salary: '+ detail_json[index[i]]['current_salary'] +'</p>'+
+                    '<p id="notice_period'+ detail_json[index[i]]['experience_num'] +'">Notice Period: '+ detail_json[index[i]]['notice_period']  +'</p>'+
+                    '<p id="skills_used'+ detail_json[index[i]]['experience_num'] +'">Skills Used: '+ detail_json[index[i]]['skills_used']  +'</p>'+
+                    '<p id="job_profile'+ detail_json[index[i]]['experience_num'] +'">Job Profile: '+ detail_json[index[i]]['job_profile'] + '</p>';
+                }
+                try{
+                    document.getElementById("role").innerHTML = '<i class="bx bx-box"></i>' + detail_json['experience_num1']['designation']
+                }catch(err){
+                    document.getElementById("role").innerHTML = '<i class="bx bx-box"></i>' + 'Fresher'
+                }       
+            }    
+        });
+    }
+
+    function getMonthDifference(startDate, endDate) {
+    return (((
+        endDate.getMonth() -
+        startDate.getMonth() +
+        12 * (endDate.getFullYear() - startDate.getFullYear())
+    )/12).toFixed(1));
+    }
+
+    function cancle_add_experience(){
+        document.getElementById("add_experience").innerHTML = "";
+    }
+
+    var experience_num = 0
+    function save_experience(){
+        experience_num++
+        var company_name = document.getElementById("company_name").value;
+        var designation = document.getElementById("designation").value;
+        var employment_type = document.getElementById("employment_type").value;
+        var employment_start = document.getElementById("employment_start").value;
+        var employment_end = document.getElementById("employment_end").value;
+        var current_salary = document.getElementById("current_salary").value;
+        var notice_period = document.getElementById("notice_period").value;
+        var skills_used = document.getElementById("skills_used").value;
+        var job_profile = document.getElementById("job_profile").value;
+
+        var body = {
+            "experience_num1" : {
+                    'experience_num': experience_num,
+                    'company_name' : document.getElementById("company_name").value,
+                    'designation' : document.getElementById("designation").value,
+                    'employment_type' : document.getElementById("employment_type").value,
+                    'employment_start' : document.getElementById("employment_start").value,
+                    'employment_end' : document.getElementById("employment_end").value,
+                    'current_salary' : document.getElementById("current_salary").value,
+                    'notice_period' : document.getElementById("notice_period").value,
+                    'skills_used' : document.getElementById("skills_used").value,
+                    'job_profile' : document.getElementById("job_profile").value
+            }
+        }
+        var key = "experience_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                put_object(body, key)
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                detail_json["experience_num"+ (keyCount+1)] = {
+                    'experience_num': (keyCount+1),
+                    'company_name' : document.getElementById("company_name").value,
+                    'designation' : document.getElementById("designation").value,
+                    'employment_type' : document.getElementById("employment_type").value,
+                    'employment_start' : document.getElementById("employment_start").value,
+                    'employment_end' : document.getElementById("employment_end").value,
+                    'current_salary' : document.getElementById("current_salary").value,
+                    'notice_period' : document.getElementById("notice_period").value,
+                    'skills_used' : document.getElementById("skills_used").value,
+                    'job_profile' : document.getElementById("job_profile").value
+            };
+
+                put_object(detail_json, key)
+                document.getElementById("experience_details").innerHTML +=
+                    '<ul id="experience_num' + experience_num + '">'+
+                    '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    company_name+ '   '+  '<a onclick="edit_experience(this)" id="experience'+ experience_num +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_experience(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_experience'+ experience_num +'"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="designation' + experience_num +'">'+ designation + '</h4>'+
+                    '<h4 id="employment_details_'+ experience_num +'">' + 'Experience: ' +' '+ getMonthDifference(new Date(employment_start), new Date(employment_end)) +' Years '+ employment_type +'</h4>'+
+                    '<p id="current_salary'+ experience_num +'">Salary: '+ current_salary +'</p>'+
+                    '<p id="notice_period'+ experience_num +'">Notice Period: '+ notice_period  +'</p>'+
+                    '<p id="skills_used'+ experience_num +'">Skills Used: '+ skills_used  +'</p>'+
+                    '<p id="job_profile'+ experience_num +'">Job Profile: '+ job_profile + '</p>';
+                document.getElementById("add_experience").innerHTML = "";
+            }
+        });
+    }
+
+    function edit_experience(obj){
+        var id = obj.id;
+        var id_num = id.charAt(id.length-1)
+        sessionStorage.setItem("id_num", id_num)
+        document.getElementById("delete_"+ id).innerHTML = "Delete"
+        var key = "experience_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        aws_config()
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                //put_object(body, key)
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                var keyCount  = Object.keys(detail_json).length;
+                document.getElementById("edit_experience").innerHTML = 
+        '<div class="post-job-area ptb-100">'+
+        '<div class="container">'+
+        '<form onSubmit="update_experience(); return false;">'+
+        '<div class="post-item">'+
+        '<div class="section-title">'+
+        '<h2>Edit Experience</h2>'+
+        '<p>_________________________</p>'+
+        '</div>'+
+        '<div class="row">'+
+            '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Company Name:'+
+            '</label>'+
+            '<input id="company_name" type="text" class="form-control" placeholder="Enter Name of Company" value="'+ detail_json['experience_num'+id_num]['company_name']+'"  required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Designation:'+
+            '</label>'+
+            '<input id="designation" type="text" class="form-control" placeholder="Enter Your Designation" value="'+ detail_json['experience_num'+id_num]['designation'] +'" required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Employment Type:'+
+            '</label>'+
+            ' <select id="employment_type" required>'+
+                '<option selected hidden>'+ detail_json['experience_num'+id_num]['employment_type'] +'</option>'+
+                '<option>Full Time</option>'+
+                '<option>Part Time</option>'+
+                '<option>Internship</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+        '    <div class="form-group">'+
+        '    <label>'+
+        '    From:'+
+        '    </label>'+
+        '    <input id="employment_start" type="date" class="form-control" placeholder="Employment Start" value="'+detail_json['experience_num'+id_num]['employment_start'] +'" required>'+
+        '    </div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'To:'+
+            '</label>'+
+            '<input id="employment_end" type="date" class="form-control" placeholder="Employment End" value="'+ detail_json['experience_num'+id_num]['employment_end']+'" required>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Current Salary:'+
+            '</label>'+
+            '<input id="current_salary" type="text" class="form-control" value="'+ detail_json['experience_num'+id_num]['current_salary'] +'" placeholder="Enter Current Salary">'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-6">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Notice Period:'+
+            '</label>'+
+            ' <select id="notice_period" required>'+
+                '<option selected hidden>'+ detail_json['experience_num'+id_num]['notice_period'] +'</option>'+
+                '<option>15 Days or less</option>'+
+                '<option>1 Month</option>'+
+                '<option>2 Month</option>'+
+                '<option>More than 3 Months</option>'+
+                '<option>Serving Notice Period</option>'+
+                '<option>Not Applicable</option>'+
+            '</select>'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Skills Used:'+
+            '</label>'+
+            '<input id="skills_used" type="text" class="form-control" value="'+ detail_json['experience_num'+id_num]['skills_used']+'" placeholder="Enter Skills Used">'+
+            '</div>'+
+        '</div>'+
+        '<div class="col-lg-12">'+
+            '<div class="form-group">'+
+            '<label>'+
+            'Job Profile:'+
+            '</label>'+
+            '<textarea style="height: 3cm" id="job_profile" type="text" class="form-control" placeholder="Enter Job Profile Details">'+ detail_json['experience_num'+id_num]['job_profile']+'</textarea>'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
+        '<button type="submit" class="btn">Save Details</button> '+
+        '<h6></h6>'+
+        '<h6 id="'+ id +'" onclick="cancle_edit_experience(this)">Cancle</h6>'+
+        '</div>'+
+        '</form>'+
+        '</div>'+
+        '</div>';            
+        //put_object(detail_json, key)      
+        }
+    });
+}
+
+    function update_experience(){
+        //document.getElementById("edit_experience").innerHTML = "";
+        var key = "experience_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                //put_object(body, key)
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                document.getElementById("experience_num"+ sessionStorage.getItem("id_num")).innerHTML = 
+                '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    document.getElementById("company_name").value+ '   '+  '<a onclick="edit_experience(this)" id="experience'+ sessionStorage.getItem("id_num") +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_experience(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_experience'+ sessionStorage.getItem("id_num") +'"></a>'  +
+                '</li>';
+                document.getElementById("designation"+ sessionStorage.getItem("id_num")).innerHTML = document.getElementById("designation").value
+                document.getElementById("employment_details_"+ sessionStorage.getItem("id_num")).innerHTML = 'Experience: ' +' '+ getMonthDifference(new Date(document.getElementById("employment_start").value), new Date(document.getElementById("employment_end").value)) +' Years '+ document.getElementById("employment_type").value;
+                document.getElementById("current_salary" +sessionStorage.getItem("id_num")).innerHTML = 'Salary: '+ document.getElementById("current_salary").value
+                document.getElementById("skills_used"+ sessionStorage.getItem("id_num")).innerHTML = 'Skills Used: '+ document.getElementById("skills_used").value
+                document.getElementById("notice_period"+ sessionStorage.getItem("id_num")).innerHTML = 'Notice Period: '+ document.getElementById("notice_period").value
+                document.getElementById("job_profile"+sessionStorage.getItem("id_num")).innerHTML = 'Job Profile: '+ document.getElementById("job_profile").value;
+
+                /*document.getElementById("experience_details").innerHTML +=
+                    '<ul id="experience_num' + sessionStorage.getItem("id_num") + '">'+
+                    '<li>'+
+                    '<img src="assets/img/home-three/title-img.png" alt="Icon">'+
+                    document.getElementById("company_name").value+ '   '+  '<a onclick="edit_experience(this)" id="experience'+ sessionStorage.getItem("id_num") +'"><i class="far fa-edit" style="font-size:18px;color:rgb(255, 65, 65); font-weight: bold;"></i></a><a onclick="delete_experience(this)" style="color: rgb(87, 0, 168); font-family: Times New Roman, Times, serif; font-size: 16px; margin-left: 8px;" id="delete_experience'+ sessionStorage.getItem("id_num") +'"></a>'  +
+                    '</li>'+
+                    '</ul>'+
+                    '<h4 id="designation' + sessionStorage.getItem("id_num") +'">'+ document.getElementById("designation").value + '</h4>'+
+                    '<h4 id="employment_details_'+ sessionStorage.getItem("id_num") +'">' + 'Experience: ' +' '+ getMonthDifference(new Date(document.getElementById("employment_start").value), new Date(document.getElementById("employment_end").value)) +' Years '+ document.getElementById("employment_type").value +'</h4>'+
+                    '<p id="current_salary'+ sessionStorage.getItem("id_num") +'">Salary: '+ document.getElementById("current_salary").value +'</p>'+
+                    '<p id="notice_period'+ sessionStorage.getItem("id_num") +'">Notice Period: '+ document.getElementById("notice_period").value  +'</p>'+
+                    '<p id="skills_used'+ sessionStorage.getItem("id_num") +'">Skills Used: '+ document.getElementById("skills_used").value  +'</p>'+
+                    '<p id="job_profile'+ sessionStorage.getItem("id_num") +'">Job Profile: '+ document.getElementById("job_profile").value + '</p>';*/
+                var data =  {
+                    'experience_num': sessionStorage.getItem("id_num"),
+                    'company_name' : document.getElementById("company_name").value,
+                    'designation' : document.getElementById("designation").value,
+                    'employment_type' : document.getElementById("employment_type").value,
+                    'employment_start' : document.getElementById("employment_start").value,
+                    'employment_end' : document.getElementById("employment_end").value,
+                    'current_salary' : document.getElementById("current_salary").value,
+                    'notice_period' : document.getElementById("notice_period").value,
+                    'skills_used' : document.getElementById("skills_used").value,
+                    'job_profile' : document.getElementById("job_profile").value
+            };
+                detail_json['experience_num'+ sessionStorage.getItem("id_num")] = data;
+                put_object(detail_json, key);
+                document.getElementById("edit_experience").innerHTML = "";
+          }
+    });
+}
+
+    function cancle_edit_experience(obj){
+        var id = obj.id;
+        document.getElementById("edit_experience").innerHTML = "";
+        document.getElementById("delete_"+id).innerHTML = "";
+    }
+
+    function delete_experience(obj){
+        var id = obj.id;
+        id = id.charAt(id.length - 1)
+        var key = "experience_details/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                delete detail_json["experience_num"+id];
+                put_object(detail_json, key)
+                document.getElementById("experience_num"+ id).innerHTML = ""
+                document.getElementById("designation"+ id).innerHTML = ""
+                document.getElementById("employment_details_"+ id).innerHTML = ""
+                document.getElementById("current_salary"+ id).innerHTML = ""
+                document.getElementById("skills_used"+ id).innerHTML = ""
+                document.getElementById("notice_period"+ id).innerHTML = ""
+                document.getElementById("job_profile"+id).innerHTML = "";
+                document.getElementById("edit_experience").innerHTML = "";     
+            }
+        });
+    }
+    //Experience Details
+
+    //DOB
+    function add_dob(){
+        document.getElementById("add_dob").innerHTML = '<input id="date_of_birth" type="date" class="form-control" placeholder="Enter DOB"><h1></h1><a onclick="save_dob()" style="text-align:center; color:blue">Save</a><a onclick="cancle_edit_dob()" style="margin-left:1cm; color:blue">Cancle</a>';
+    }
+
+    function save_dob(){
+        var body = {
+            "date_of_birth": document.getElementById("date_of_birth").value
+        }
+        var key = "date_of_birth/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+        put_object(body, key)
+        const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+        document.getElementById("dob").innerHTML = document.getElementById("date_of_birth").value
+        document.getElementById("age").innerHTML = getAge(document.getElementById("date_of_birth").value) + " Years"
+        document.getElementById("add_dob").innerHTML = ""
+        }
+
+        function cancle_edit_dob(){
+            document.getElementById("add_dob").innerHTML = ""
+        }
+    //DOB
+
+    //Gender
+    function add_gender(){
+        document.getElementById("add_gender").innerHTML = 
+            '<select id="gender">'+
+                '<option>Male</option>'+
+                '<option>Female</option>'+
+                '<option>Prefer Not to say</option>'
+            '</select>';
+    
+            document.getElementById("add_gender").innerHTML += '<h1></h1><a onclick="save_gender()" style="text-align:center; color:blue">Save</a><a onclick="cancle_edit_gender()" style="margin-left:1cm; color:blue">Cancle</a>'
+        }
+
+
+    function save_gender(){
+        var body = {
+            "gender": document.getElementById("gender").value
+        }
+        var key = "gender/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();            
+        put_object(body, key)
+        document.getElementById("gender_detail").innerHTML = document.getElementById("gender").value;
+        document.getElementById("add_gender").innerHTML = "";
+        }
+
+        function cancle_edit_gender(){
+            document.getElementById("add_gender").innerHTML = ""
+        }
+    //Gender
+
+    //load gender and dob
+    function load_dob_n_gender(){
+        var key = "date_of_birth/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        try{
+            aws_config()
+        }catch(err) {
+            location = "network_error.html";
+        }
+        var s3 = new AWS.S3();
+		var params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+		s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                document.getElementById("dob").innerHTML = "";
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                document.getElementById("dob").innerHTML = detail_json['date_of_birth'];
+                const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+                document.getElementById("age").innerHTML = getAge(detail_json['date_of_birth']) + " Years"
+            }
+        });
+
+        key = "gender/"+ JSON.parse(sessionStorage.getItem("userdata"))['emailaddress'] +".json"
+        params = {
+			Bucket: "job-candidate-details",
+			Key: key
+			};
+        s3.getObject(params, function(err, data) {
+			if(err) {
+				//console.log(err, err.stack); // an error occurred
+                document.getElementById("dob").innerHTML = "";
+			}
+			else{
+				var detail_json   = data.Body.toString('utf-8'); // successful response
+				detail_json = JSON.parse(detail_json);
+                document.getElementById("gender_detail").innerHTML = detail_json['gender'];
+            }
+        });
+    }
+    //load gender and dob
+</script>
+
+<style>
+/* CSS */
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+.custom-select {
+  min-width: 350px;
+  position: relative;
+}
+
+select {
+  appearance: none;
+  /*  safari  */
+  -webkit-appearance: none;
+  /*  other styles for aesthetics */
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #a3a3a3;
+  cursor: pointer;
+}
+
+</style>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/form-validator.min.js"></script>
+<script src="assets/js/contact-form-script.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/progressbar.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="js/candidate-detail.js"></script>
+<script src="../sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+
+</body>
+
+<!-- Mirrored from hirelanes.netlify.app/candidate-details by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 10:29:29 GMT -->
+</html>
